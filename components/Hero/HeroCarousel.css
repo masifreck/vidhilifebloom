@@ -1,0 +1,436 @@
+/* =========================================
+   HERO CAROUSEL SECTION
+========================================= */
+
+.hero-carousel-section {
+  width: 100%;
+
+  padding: 22px 0 55px;
+
+  background: var(--background);
+}
+
+
+/* =========================================
+   PAGE HORIZONTAL PADDING
+========================================= */
+
+.hero-carousel-container {
+  width: min(
+    calc(100% - 48px),
+    1440px
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   CAROUSEL
+========================================= */
+
+.hero-carousel {
+  position: relative;
+
+  width: 100%;
+
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.hero-carousel-slide {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.hero-carousel-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  animation: carouselImageZoom 5s ease forwards;
+}
+
+
+@keyframes carouselImageZoom {
+
+  from {
+    transform: scale(1.03);
+  }
+
+  to {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================
+   DARK GRADIENT
+========================================= */
+
+.hero-carousel-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.35) 42%,
+      rgba(0, 0, 0, 0.08) 75%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-carousel-content {
+  position: absolute;
+
+  left: 65px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: min(
+    500px,
+    45%
+  );
+
+  color: white;
+}
+
+
+.hero-carousel-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  margin-bottom: 15px;
+}
+
+
+.hero-carousel-content h1 {
+  margin: 0;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: clamp(
+    32px,
+    4vw,
+    52px
+  );
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+
+  max-width: 520px;
+}
+
+
+.hero-carousel-content p {
+  margin-top: 15px;
+
+  max-width: 440px;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+.hero-carousel-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.hero-carousel-link svg {
+  transition: transform 0.2s ease;
+}
+
+
+.hero-carousel-slide:hover
+.hero-carousel-link svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.hero-carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.hero-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+
+.hero-carousel-arrow-left {
+  left: 20px;
+}
+
+
+.hero-carousel-arrow-right {
+  right: 20px;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.hero-carousel-dots {
+  position: absolute;
+
+  z-index: 10;
+
+  bottom: 18px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.hero-carousel-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.hero-carousel-dot.active {
+  width: 25px;
+
+  border-radius: 999px;
+
+  background: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-carousel-container {
+    width: calc(100% - 32px);
+  }
+
+  .hero-carousel {
+    height: 390px;
+
+    border-radius: 20px;
+  }
+
+  .hero-carousel-content {
+    left: 45px;
+
+    width: 55%;
+  }
+
+  .hero-carousel-content h1 {
+    font-size: 40px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .hero-carousel-section {
+    padding: 12px 0 40px;
+  }
+
+  .hero-carousel-container {
+    width: calc(100% - 20px);
+  }
+
+  .hero-carousel {
+    height: 370px;
+
+    border-radius: 18px;
+  }
+
+  .hero-carousel-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.08) 10%,
+        rgba(0, 0, 0, 0.72) 100%
+      );
+  }
+
+  .hero-carousel-content {
+    left: 22px;
+    right: 22px;
+
+    bottom: 40px;
+    top: auto;
+
+    transform: none;
+
+    width: auto;
+  }
+
+  .hero-carousel-label {
+    font-size: 9px;
+
+    margin-bottom: 10px;
+  }
+
+  .hero-carousel-content h1 {
+    font-size: 29px;
+
+    line-height: 1.1;
+  }
+
+  .hero-carousel-content p {
+    margin-top: 9px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    max-width: 320px;
+  }
+
+  .hero-carousel-link {
+    margin-top: 13px;
+
+    font-size: 12px;
+  }
+
+  .hero-carousel-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-carousel-arrow-left {
+    left: 10px;
+  }
+
+  .hero-carousel-arrow-right {
+    right: 10px;
+  }
+
+  .hero-carousel-dots {
+    bottom: 14px;
+  }
+
+}

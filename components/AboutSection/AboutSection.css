@@ -1,0 +1,364 @@
+.about-section {
+  padding: 95px 0;
+  background: var(--surface);
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 85px;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.about-visual {
+  position: relative;
+  min-height: 560px;
+}
+
+.about-main-image {
+  width: calc(100% - 35px);
+  height: 510px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: var(--surface-alt);
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.about-visual:hover .about-main-image img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.about-experience-card {
+  position: absolute;
+
+  left: -22px;
+  bottom: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 18px;
+
+  background: #fff;
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-md);
+}
+
+.about-experience-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  color: #fff;
+  background: var(--primary);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.about-experience-text {
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.about-check-card {
+  position: absolute;
+
+  top: 35px;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: var(--shadow-md);
+}
+
+.about-check-card > svg {
+  width: 22px;
+  height: 22px;
+
+  color: var(--success);
+}
+
+.about-check-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-check-card strong {
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+.about-check-card span {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-content {
+  max-width: 610px;
+}
+
+.about-content h2 {
+  margin: 11px 0 18px;
+
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.1;
+
+  letter-spacing: -1.6px;
+
+  color: var(--text-primary);
+}
+
+.about-content h2 span {
+  color: var(--primary);
+}
+
+.about-intro {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.about-secondary {
+  margin: 12px 0 0;
+
+  color: var(--text-light);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px 18px;
+
+  margin-top: 32px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-highlight-icon {
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.about-highlight-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.about-highlight h3 {
+  margin: 1px 0 4px;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.about-highlight p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 34px;
+
+  padding: 13px 18px;
+
+  border-radius: 11px;
+
+  color: #fff;
+  background: var(--primary);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: all 0.25s ease;
+}
+
+.about-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.about-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-visual {
+    max-width: 650px;
+  }
+
+  .about-content {
+    max-width: 700px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 65px 0;
+  }
+
+  .about-layout {
+    gap: 40px;
+  }
+
+  .about-visual {
+    min-height: 410px;
+  }
+
+  .about-main-image {
+    width: calc(100% - 15px);
+    height: 380px;
+
+    border-radius: 21px;
+  }
+
+  .about-experience-card {
+    left: 8px;
+    bottom: 10px;
+
+    padding: 11px 13px;
+  }
+
+  .about-experience-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .about-check-card {
+    top: 18px;
+    right: 0;
+
+    padding: 10px 12px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .about-intro {
+    font-size: 14px;
+  }
+
+  .about-secondary {
+    font-size: 13px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+}
