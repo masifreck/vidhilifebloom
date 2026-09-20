@@ -1,424 +1,401 @@
-/* =========================================
-   HERO CAROUSEL SECTION
-========================================= */
+/* =========================================================
+   HERO CAROUSEL
+   ========================================================= */
 
 .hero-carousel-section {
-  width: 100%;
-
-  padding: 22px 0 55px;
-
-  background: var(--background);
+  padding: 18px 0 50px;
+  background: #ffffff;
 }
 
-
-/* =========================================
-   PAGE HORIZONTAL PADDING
-========================================= */
-
 .hero-carousel-container {
-  width: min(
-    calc(100% - 48px),
-    1440px
-  );
-
+  width: min(calc(100% - 48px), 1440px);
   margin: 0 auto;
 }
 
-
-/* =========================================
-   CAROUSEL
-========================================= */
-
 .hero-carousel {
   position: relative;
-
   width: 100%;
-
   height: 430px;
-
   overflow: hidden;
-
   border-radius: 24px;
-
-  background: var(--surface);
-
-  box-shadow: var(--shadow-md);
+  background: #10201f;
+  box-shadow: 0 18px 45px rgba(23, 33, 33, 0.12);
 }
 
-
-/* =========================================
+/* =========================================================
    SLIDE
-========================================= */
+   ========================================================= */
 
 .hero-carousel-slide {
   position: relative;
-
   display: block;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
+  color: #ffffff;
+  text-decoration: none;
 }
-
-
-/* =========================================
-   IMAGE
-========================================= */
 
 .hero-carousel-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-
-  display: block;
-
   object-fit: cover;
-
-  animation: carouselImageZoom 5s ease forwards;
+  object-position: center center;
+  transform: scale(1.01);
+  animation: heroImageZoom 5s ease-out forwards;
 }
 
-
-@keyframes carouselImageZoom {
-
+@keyframes heroImageZoom {
   from {
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 
   to {
-    transform: scale(1);
+    transform: scale(1.06);
   }
-
 }
 
-
-/* =========================================
-   DARK GRADIENT
-========================================= */
+/* =========================================================
+   OVERLAY
+   ========================================================= */
 
 .hero-carousel-overlay {
   position: absolute;
-
   inset: 0;
-
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.68) 0%,
-      rgba(0, 0, 0, 0.35) 42%,
-      rgba(0, 0, 0, 0.08) 75%,
-      rgba(0, 0, 0, 0.05) 100%
+      rgba(7, 34, 33, 0.88) 0%,
+      rgba(7, 34, 33, 0.68) 34%,
+      rgba(7, 34, 33, 0.28) 65%,
+      rgba(7, 34, 33, 0.08) 100%
     );
+  pointer-events: none;
 }
 
-
-/* =========================================
+/* =========================================================
    CONTENT
-========================================= */
+   ========================================================= */
 
 .hero-carousel-content {
   position: absolute;
-
+  z-index: 2;
   left: 65px;
-
   top: 50%;
-
+  width: min(520px, 48%);
   transform: translateY(-50%);
-
-  width: min(
-    500px,
-    45%
-  );
-
-  color: white;
 }
-
 
 .hero-carousel-label {
   display: inline-flex;
-
   align-items: center;
-
-  padding: 6px 11px;
-
+  margin-bottom: 16px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.16);
-
-  border: 1px solid rgba(255, 255, 255, 0.22);
-
-  backdrop-filter: blur(10px);
-
-  font-size: 10px;
-
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 11px;
   font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  margin-bottom: 15px;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  backdrop-filter: blur(8px);
 }
-
 
 .hero-carousel-content h1 {
+  max-width: 560px;
   margin: 0;
-
-  font-family: 'Plus Jakarta Sans', sans-serif;
-
-  font-size: clamp(
-    32px,
-    4vw,
-    52px
-  );
-
-  line-height: 1.08;
-
-  letter-spacing: -0.04em;
-
-  max-width: 520px;
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 750;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
 }
 
-
 .hero-carousel-content p {
-  margin-top: 15px;
-
-  max-width: 440px;
-
-  color: rgba(255, 255, 255, 0.86);
-
-  font-size: 14px;
-
+  max-width: 460px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.65;
 }
 
-
 .hero-carousel-link {
   display: inline-flex;
-
   align-items: center;
-
   gap: 8px;
-
-  margin-top: 20px;
-
-  font-size: 13px;
-
-  font-weight: 600;
+  margin-top: 24px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
 }
-
 
 .hero-carousel-link svg {
-  transition: transform 0.2s ease;
+  width: 17px;
+  height: 17px;
+  transition: transform 0.25s ease;
 }
 
-
-.hero-carousel-slide:hover
-.hero-carousel-link svg {
-  transform: translateX(5px);
+.hero-carousel-slide:hover .hero-carousel-link svg {
+  transform: translateX(4px);
 }
 
-
-/* =========================================
+/* =========================================================
    ARROWS
-========================================= */
+   ========================================================= */
 
 .hero-carousel-arrow {
   position: absolute;
-
+  z-index: 5;
   top: 50%;
-
-  transform: translateY(-50%);
-
-  z-index: 10;
-
-  width: 42px;
-  height: 42px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.3);
-
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-
-  background: rgba(0, 0, 0, 0.22);
-
-  backdrop-filter: blur(10px);
-
-  color: white;
-
+  background: rgba(20, 35, 34, 0.28);
+  color: #ffffff;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(8px);
   transition:
     background 0.2s ease,
+    border-color 0.2s ease,
     transform 0.2s ease;
 }
 
+.hero-carousel-arrow svg {
+  width: 19px;
+  height: 19px;
+}
 
 .hero-carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.48);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(20, 35, 34, 0.55);
 }
 
+.hero-carousel-arrow:active {
+  transform: translateY(-50%) scale(0.94);
+}
 
 .hero-carousel-arrow-left {
-  left: 20px;
+  left: 22px;
 }
-
 
 .hero-carousel-arrow-right {
-  right: 20px;
+  right: 22px;
 }
 
-
-/* =========================================
+/* =========================================================
    DOTS
-========================================= */
+   ========================================================= */
 
 .hero-carousel-dots {
   position: absolute;
-
-  z-index: 10;
-
-  bottom: 18px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
+  z-index: 5;
+  left: 65px;
+  bottom: 25px;
   display: flex;
-
   align-items: center;
-
   gap: 7px;
 }
-
 
 .hero-carousel-dot {
   width: 7px;
   height: 7px;
-
   padding: 0;
-
   border: 0;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.55);
-
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  cursor: pointer;
   transition:
     width 0.25s ease,
     background 0.25s ease;
 }
 
-
 .hero-carousel-dot.active {
   width: 25px;
-
-  border-radius: 999px;
-
-  background: white;
+  background: #ffffff;
 }
 
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-  .hero-carousel-container {
-    width: calc(100% - 32px);
-  }
-
+@media (max-width: 1100px) {
   .hero-carousel {
-    height: 390px;
-
-    border-radius: 20px;
+    height: 400px;
   }
 
   .hero-carousel-content {
-    left: 45px;
-
-    width: 55%;
+    left: 48px;
+    width: min(500px, 55%);
   }
 
   .hero-carousel-content h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
+  .hero-carousel-dots {
+    left: 48px;
+  }
 }
 
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
+@media (max-width: 850px) {
   .hero-carousel-section {
-    padding: 12px 0 40px;
+    padding: 14px 0 42px;
   }
 
   .hero-carousel-container {
-    width: calc(100% - 20px);
+    width: min(calc(100% - 32px), 760px);
   }
 
   .hero-carousel {
     height: 370px;
-
-    border-radius: 18px;
+    border-radius: 20px;
   }
 
+  .hero-carousel-content {
+    left: 38px;
+    width: 58%;
+  }
+
+  .hero-carousel-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-carousel-content p {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .hero-carousel-arrow-left {
+    left: 16px;
+  }
+
+  .hero-carousel-arrow-right {
+    right: 16px;
+  }
+
+  .hero-carousel-dots {
+    left: 38px;
+    bottom: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .hero-carousel-section {
+    padding: 10px 0 34px;
+  }
+
+  .hero-carousel-container {
+    width: calc(100% - 24px);
+  }
+
+  /*
+    IMPORTANT:
+    Reduced mobile height so the carousel does not become
+    unnecessarily tall and crop too much of the image.
+  */
+  .hero-carousel {
+    height: 265px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(23, 33, 33, 0.1);
+  }
+
+  .hero-carousel-image {
+    /*
+      Keep the image centered.
+      The shorter carousel still uses cover, but the
+      reduced height significantly improves the visible area.
+    */
+    object-position: center center;
+  }
+
+  /*
+    Stronger bottom gradient on mobile so text remains
+    readable without darkening the entire image.
+  */
   .hero-carousel-overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.08) 10%,
-        rgba(0, 0, 0, 0.72) 100%
+        rgba(7, 34, 33, 0.02) 0%,
+        rgba(7, 34, 33, 0.08) 30%,
+        rgba(7, 34, 33, 0.55) 62%,
+        rgba(7, 34, 33, 0.9) 100%
       );
   }
 
   .hero-carousel-content {
-    left: 22px;
-    right: 22px;
-
-    bottom: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 38px;
     top: auto;
-
-    transform: none;
-
     width: auto;
+    transform: none;
   }
 
   .hero-carousel-label {
-    font-size: 9px;
-
-    margin-bottom: 10px;
+    margin-bottom: 7px;
+    padding: 5px 9px;
+    font-size: 8px;
+    letter-spacing: 0.11em;
   }
 
   .hero-carousel-content h1 {
-    font-size: 29px;
-
-    line-height: 1.1;
+    max-width: 320px;
+    font-size: 25px;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
   }
 
   .hero-carousel-content p {
-    margin-top: 9px;
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    max-width: 320px;
+    max-width: 330px;
+    margin-top: 7px;
+    font-size: 11px;
+    line-height: 1.4;
   }
 
   .hero-carousel-link {
-    margin-top: 13px;
-
-    font-size: 12px;
+    margin-top: 10px;
+    gap: 5px;
+    font-size: 11px;
   }
 
+  .hero-carousel-link svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /*
+    Smaller mobile arrows.
+  */
   .hero-carousel-arrow {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(20, 35, 34, 0.22);
+  }
+
+  .hero-carousel-arrow svg {
+    width: 15px;
+    height: 15px;
   }
 
   .hero-carousel-arrow-left {
@@ -429,8 +406,125 @@
     right: 10px;
   }
 
+  /*
+    Dots moved to bottom-right so they don't compete
+    with the text.
+  */
   .hero-carousel-dots {
-    bottom: 14px;
+    left: auto;
+    right: 20px;
+    bottom: 16px;
+    gap: 5px;
   }
 
+  .hero-carousel-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .hero-carousel-dot.active {
+    width: 18px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .hero-carousel-container {
+    width: calc(100% - 20px);
+  }
+
+  .hero-carousel {
+    height: 245px;
+    border-radius: 14px;
+  }
+
+  .hero-carousel-content {
+    left: 17px;
+    right: 17px;
+    bottom: 34px;
+  }
+
+  .hero-carousel-content h1 {
+    max-width: 280px;
+    font-size: 22px;
+  }
+
+  .hero-carousel-content p {
+    max-width: 285px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .hero-carousel-label {
+    font-size: 7px;
+  }
+
+  .hero-carousel-link {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  .hero-carousel-arrow {
+    width: 29px;
+    height: 29px;
+  }
+
+  .hero-carousel-arrow-left {
+    left: 8px;
+  }
+
+  .hero-carousel-arrow-right {
+    right: 8px;
+  }
+
+  .hero-carousel-dots {
+    right: 17px;
+    bottom: 13px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 340px) {
+  .hero-carousel {
+    height: 225px;
+  }
+
+  .hero-carousel-content {
+    bottom: 30px;
+  }
+
+  .hero-carousel-content h1 {
+    font-size: 20px;
+  }
+
+  .hero-carousel-content p {
+    display: none;
+  }
+
+  .hero-carousel-link {
+    margin-top: 7px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-image {
+    animation: none;
+    transform: none;
+  }
+
+  .hero-carousel-arrow,
+  .hero-carousel-link svg,
+  .hero-carousel-dot {
+    transition: none;
+  }
 }
