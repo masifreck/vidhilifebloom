@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import {
   FiArrowUpRight,
-  FiChevronDown,
   FiMenu,
   FiPhone,
   FiX,
@@ -14,183 +13,172 @@ import {
 
 import './Header.css';
 
+const navigation = [
+  {
+    label: 'Home',
+    href: '/',
+  },
+  {
+    label: 'Care',
+    href: '/home-care',
+  },
+  {
+    label: 'Wellness',
+    href: '/activity-wellness',
+  },
+  {
+    label: 'Investigation',
+    href: '/investigation-agency',
+  },
+  {
+    label: 'Workforce',
+    href: '/manpower-supply',
+  },
+  {
+    label: 'About',
+    href: '/about',
+  },
+];
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
-  
 
   return (
-    <header className="modern-header">
+    <header className="site-header">
 
-      <div className="modern-header-container">
+      <div className="site-header-inner">
 
-        {/* Logo */}
-      <Link href="/" className="modern-logo" onClick={closeMenu}>
-  <Image
-    src="/logo/logo.png"
-    alt="Vidhi Lifebloom"
-    width={52}
-    height={52}
-    priority
-  />
+        {/* =====================================
+            BRAND
+        ====================================== */}
 
-  <div className="brand-text">
-    <span className="brand-name">VIDHI LIFEBLOOM</span>
-    <span className="brand-tagline">
-      Healthcare &amp; Professional Services
-    </span>
-  </div>
-</Link>
+        <Link
+          href="/"
+          className="site-brand"
+          onClick={closeMenu}
+          aria-label="Vidhi Lifebloom Home"
+        >
+
+          <div className="site-brand-mark">
+            <Image
+              src="/logo/logo.png"
+              alt="Vidhi Lifebloom logo"
+              width={52}
+              height={52}
+              priority
+            />
+          </div>
 
 
-        {/* Desktop Navigation */}
-        <nav className="desktop-navigation">
+          <div className="site-brand-copy">
 
-          <Link href="/" className="nav-link">
-            Home
-          </Link>
+            <div className="site-brand-name">
+              <span>VIDHI</span>
+              <span>LIFEBLOOM</span>
+            </div>
 
-          <Link href="/home-care" className="nav-link">
-            Care
-          </Link>
+            <span className="site-brand-line" />
 
-          <Link href="/activity-wellness" className="nav-link">
-            Wellness
-          </Link>
+            <span className="site-brand-tagline">
+              Healthcare <b>•</b> Professional Services
+            </span>
 
-          <Link href="/investigation-agency" className="nav-link">
-            Investigation
-          </Link>
+          </div>
 
-          <Link href="/manpower-supply" className="nav-link">
-            Workforce
-          </Link>
+        </Link>
 
-          <Link href="/about" className="nav-link">
-            About
-          </Link>
+
+        {/* =====================================
+            DESKTOP NAVIGATION
+        ====================================== */}
+
+        <nav
+          className="site-navigation"
+          aria-label="Main navigation"
+        >
+
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="site-nav-link"
+            >
+              {item.label}
+            </Link>
+          ))}
 
         </nav>
 
 
-        {/* Header Actions */}
-        <div className="header-actions">
+        {/* =====================================
+            ACTIONS
+        ====================================== */}
 
-          <a
-            href="tel:9090207519"
-            className="header-phone"
-            aria-label="Call us"
-          >
-            <FiPhone />
-          </a>
-
-          <Link
-            href="/contact"
-            className="header-contact"
-          >
-            <span>Contact Us</span>
-            <FiArrowUpRight />
-          </Link>
-
-          <button
-            type="button"
-            className="mobile-menu-button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={
-              menuOpen
-                ? 'Close navigation menu'
-                : 'Open navigation menu'
-            }
-          >
-            {menuOpen ? <FiX /> : <FiMenu />}
-          </button>
-
-        </div>
+       
 
       </div>
 
 
-      {/* Mobile Navigation */}
+      {/* =====================================
+          MOBILE NAVIGATION
+      ====================================== */}
+
       <div
         className={
           menuOpen
-            ? 'mobile-navigation open'
+            ? 'mobile-navigation mobile-navigation-open'
             : 'mobile-navigation'
         }
       >
 
         <div className="mobile-navigation-inner">
 
-          <Link href="/" onClick={closeMenu}>
-            <span>Home</span>
-            <FiArrowUpRight />
-          </Link>
+          <div className="mobile-navigation-header">
 
-          <Link href="/home-care" onClick={closeMenu}>
-            <span>Care</span>
-            <FiArrowUpRight />
-          </Link>
+            <span>
+              MENU
+            </span>
 
-          <Link
-            href="/activity-wellness"
-            onClick={closeMenu}
-          >
-            <span>Wellness</span>
-            <FiArrowUpRight />
-          </Link>
-
-          <Link
-            href="/investigation-agency"
-            onClick={closeMenu}
-          >
-            <span>Investigation</span>
-            <FiArrowUpRight />
-          </Link>
-
-          <Link
-            href="/manpower-supply"
-            onClick={closeMenu}
-          >
-            <span>Workforce</span>
-            <FiArrowUpRight />
-          </Link>
-
-          <Link href="/about" onClick={closeMenu}>
-            <span>About Us</span>
-            <FiArrowUpRight />
-          </Link>
-
-          <Link href="/contact" onClick={closeMenu}>
-            <span>Contact Us</span>
-            <FiArrowUpRight />
-          </Link>
-
-
-          {/* Mobile contact box */}
-          <div className="mobile-contact-box">
-
-            <div>
-              <small>Need assistance?</small>
-
-              <a href="tel:9090207519">
-                +91 90902 07519
-              </a>
-            </div>
-
-            <a
-              href="https://wa.me/919090207519"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mobile-whatsapp"
-            >
-              WhatsApp
-              <FiArrowUpRight />
-            </a>
+            <span>
+              VIDHI LIFEBLOOM
+            </span>
 
           </div>
+
+
+          <div className="mobile-navigation-links">
+
+            {navigation.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="mobile-nav-link"
+                onClick={closeMenu}
+              >
+
+                <span className="mobile-nav-number">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <span className="mobile-nav-label">
+                  {item.label}
+                </span>
+
+                <FiArrowUpRight />
+
+              </Link>
+            ))}
+
+          </div>
+
+
+          {/* Mobile contact */}
+
+    
 
         </div>
 

@@ -19,7 +19,7 @@ const slides = [
       'Compassionate and reliable support for you and your loved ones.',
     image: '/images/hero/home-care.jpeg',
     href: '/home-care',
-    label: 'HOME CARE',
+    label: 'Professional Home Care',
   },
   {
     id: 2,
@@ -28,25 +28,25 @@ const slides = [
       'Services designed to support an active and healthier lifestyle.',
     image: '/images/hero/well.jpeg',
     href: '/activity-wellness',
-    label: 'ACTIVITY & WELLNESS',
+    label: 'Activity & Wellness',
   },
   {
     id: 3,
-    title: 'Investigation Services',
+    title: 'Verification & Investigation',
     description:
       'Professional and confidential investigation services.',
     image: '/images/hero/investi.jpeg',
     href: '/investigation-agency',
-    label: 'INVESTIGATION AGENCY',
+    label: 'Verification & Investigation',
   },
   {
     id: 4,
-    title: 'Professional Manpower Solutions',
+    title: 'Professional Workforce Solutions',
     description:
       'Reliable workforce solutions for businesses and organizations.',
     image: '/images/hero/man.jpeg',
     href: '/manpower-supply',
-    label: 'MANPOWER SUPPLY',
+    label: 'Professional Workforce Solutions',
   },
 ];
 

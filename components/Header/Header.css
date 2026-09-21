@@ -1,62 +1,197 @@
-.modern-header {
+/* =====================================================
+   VIDHI LIFEBLOOM
+   PREMIUM HEADER
+===================================================== */
+
+.site-header {
   position: sticky;
+
   top: 0;
-  z-index: 999;
+
+  z-index: 1000;
 
   width: 100%;
 
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.88);
 
-  border-bottom: 1px solid rgba(20, 40, 39, 0.08);
+  border-bottom: 1px solid rgba(11, 122, 117, 0.10);
 
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-/* =========================
-   HEADER CONTAINER
-========================= */
 
-.modern-header-container {
-  width: min(calc(100% - 48px), 1380px);
-  height: 76px;
+/* =====================================================
+   HEADER INNER
+===================================================== */
+
+.site-header-inner {
+  width: min(1380px, calc(100% - 48px));
+
+  height: 78px;
 
   margin: 0 auto;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 35px;
 }
 
-/* =========================
-   LOGO
-========================= */
 
-.modern-logo {
+/* =====================================================
+   BRAND
+===================================================== */
+
+.site-brand {
   display: flex;
+
   align-items: center;
 
   flex-shrink: 0;
+
+  gap: 12px;
+
+  color: #075e5a;
 }
 
-.modern-logo img {
-  width: auto;
-  height: 48px;
 
-  display: block;
+/* -----------------------------------------
+   Logo
+------------------------------------------ */
+
+.site-brand-mark {
+  width: 47px;
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+}
+
+
+.site-brand-mark img {
+  width: 100%;
+  height: 100%;
 
   object-fit: contain;
 }
 
-/* =========================
-   DESKTOP NAV
-========================= */
 
-.desktop-navigation {
+/* -----------------------------------------
+   Brand copy
+------------------------------------------ */
+
+.site-brand-copy {
   display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* -----------------------------------------
+   Company name
+------------------------------------------ */
+
+.site-brand-name {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  line-height: 1;
+}
+
+
+.site-brand-name span:first-child {
+  color: #075e5a;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.025em;
+}
+
+
+.site-brand-name span:last-child {
+  color: #273a3a;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.025em;
+}
+
+
+/* -----------------------------------------
+   Small divider
+------------------------------------------ */
+
+.site-brand-line {
+  width: 27px;
+
+  height: 1px;
+
+  margin: 5px 0 4px;
+
+  background: #72a7a3;
+}
+
+
+/* -----------------------------------------
+   Tagline
+------------------------------------------ */
+
+.site-brand-tagline {
+  color: #81918f;
+
+  font-size: 7.5px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+.site-brand-tagline b {
+  margin: 0 3px;
+
+  color: #0b7a75;
+
+  font-size: 7px;
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.site-navigation {
+  display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 5px;
@@ -64,121 +199,152 @@
   margin-left: auto;
 }
 
-.nav-link {
+
+.site-nav-link {
   position: relative;
 
-  display: inline-flex;
+  display: flex;
+
   align-items: center;
 
-  min-height: 40px;
+  justify-content: center;
 
-  padding: 0 12px;
+  height: 38px;
 
-  color: #4d5c5b;
+  padding: 0 13px;
 
-  font-size: 13px;
+  color: #536361;
+
+  font-size: 12px;
+
   font-weight: 600;
 
-  white-space: nowrap;
+  letter-spacing: 0.01em;
+
+  border-radius: 7px;
 
   transition:
     color 0.2s ease,
     background 0.2s ease;
 }
 
-.nav-link::after {
+
+.site-nav-link::after {
   content: '';
 
   position: absolute;
 
-  left: 12px;
-  right: 12px;
-  bottom: 4px;
+  left: 50%;
+  bottom: 5px;
 
+  width: 0;
   height: 2px;
 
-  background: var(--primary);
+  transform: translateX(-50%);
 
-  border-radius: 99px;
+  border-radius: 10px;
 
-  transform: scaleX(0);
-  transform-origin: center;
+  background: #0b7a75;
 
-  transition: transform 0.2s ease;
+  transition: width 0.2s ease;
 }
 
-.nav-link:hover {
-  color: var(--primary);
+
+.site-nav-link:hover {
+  color: #075e5a;
+
+  background: rgba(11, 122, 117, 0.045);
 }
 
-.nav-link:hover::after {
-  transform: scaleX(1);
+
+.site-nav-link:hover::after {
+  width: 14px;
 }
 
-/* =========================
-   ACTIONS
-========================= */
 
-.header-actions {
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
+
+.site-header-actions {
   display: flex;
+
   align-items: center;
-  gap: 9px;
+
+  gap: 10px;
 
   flex-shrink: 0;
 }
 
-.header-phone {
-  width: 40px;
-  height: 40px;
 
+/* =====================================================
+   PHONE
+===================================================== */
+
+.site-phone {
   display: flex;
+
   align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--border);
-  border-radius: 50%;
-
-  color: var(--text-primary);
-
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.header-phone svg {
-  font-size: 16px;
-}
-
-.header-phone:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-
-  transform: translateY(-1px);
-}
-
-/* =========================
-   CONTACT BUTTON
-========================= */
-
-.header-contact {
-  min-height: 42px;
-
-  padding: 0 15px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
   gap: 7px;
 
-  background: var(--primary);
+  padding: 0 8px;
+
+  color: #526362;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+
+.site-phone svg {
+  color: #0b7a75;
+
+  font-size: 15px;
+}
+
+
+.site-phone:hover {
+  color: #075e5a;
+}
+
+
+/* =====================================================
+   CONTACT BUTTON
+===================================================== */
+
+.site-contact-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 39px;
+
+  padding: 0 15px;
+
   color: #ffffff;
 
-  border-radius: 10px;
+  background: #075e5a;
 
-  font-size: 12px;
+  border-radius: 8px;
+
+  font-size: 10px;
+
   font-weight: 700;
+
+  letter-spacing: 0.01em;
+
+  box-shadow:
+    0 5px 14px rgba(7, 94, 90, 0.14);
 
   transition:
     background 0.2s ease,
@@ -186,289 +352,504 @@
     box-shadow 0.2s ease;
 }
 
-.header-contact svg {
+
+.site-contact-button svg {
   font-size: 14px;
 }
 
-.header-contact:hover {
-  background: var(--primary-dark);
+
+.site-contact-button:hover {
+  background: #064f4b;
 
   transform: translateY(-1px);
 
-  box-shadow: 0 8px 20px rgba(11, 122, 117, 0.18);
+  box-shadow:
+    0 8px 18px rgba(7, 94, 90, 0.20);
 }
 
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
 
-.mobile-menu-button {
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.site-menu-button {
   display: none;
 
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  padding: 0;
+
+  border: 1px solid rgba(11, 122, 117, 0.13);
+
+  border-radius: 8px;
 
   background: #ffffff;
-  color: var(--text-primary);
 
-  font-size: 20px;
+  color: #075e5a;
+
+  cursor: pointer;
 }
 
-/* =========================
+
+.site-menu-button svg {
+  font-size: 19px;
+}
+
+
+/* =====================================================
    MOBILE NAVIGATION
-========================= */
+===================================================== */
 
 .mobile-navigation {
   display: none;
 }
 
-/* =========================
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 1100px) {
 
-  .modern-header-container {
-    width: min(calc(100% - 32px), 1380px);
+  .site-header-inner {
+    width: min(100% - 36px, 1000px);
+
+    gap: 18px;
   }
 
-  .desktop-navigation {
+
+  .site-navigation {
     gap: 0;
   }
 
-  .nav-link {
-    padding: 0 8px;
 
-    font-size: 12px;
+  .site-nav-link {
+    padding: 0 9px;
+
+    font-size: 11px;
   }
 
-  .nav-link::after {
-    left: 8px;
-    right: 8px;
+
+  .site-phone span {
+    display: none;
   }
 
-  .header-contact {
-    padding: 0 12px;
+
+  .site-phone {
+    width: 36px;
+    height: 36px;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(11, 122, 117, 0.10);
+
+    border-radius: 50%;
   }
+
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 850px) {
 
-  .modern-header-container {
+  .site-header-inner {
+    width: calc(100% - 32px);
+
     height: 68px;
   }
 
-  .modern-logo img {
-    height: 43px;
-  }
 
-  .desktop-navigation {
+  .site-navigation {
     display: none;
   }
 
-  .header-phone {
-    width: 38px;
-    height: 38px;
+
+  .site-header-actions {
+    gap: 8px;
   }
 
-  .header-contact {
+
+  .site-phone {
+    display: flex;
+  }
+
+
+  .site-contact-button {
     display: none;
   }
 
-  .mobile-menu-button {
+
+  .site-menu-button {
     display: flex;
   }
 
-  /* Mobile Navigation */
 
-  .mobile-navigation {
-    display: block;
+  /* Brand */
 
-    position: absolute;
-
-    top: 68px;
-    left: 0;
-    right: 0;
-
-    background: rgba(255, 255, 255, 0.98);
-
-    border-bottom: 1px solid var(--border);
-
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-8px);
-
-    transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease,
-      transform 0.25s ease;
+  .site-brand-mark {
+    width: 42px;
+    height: 42px;
   }
 
-  .mobile-navigation.open {
-    opacity: 1;
-    visibility: visible;
 
-    transform: translateY(0);
-  }
-
-  .mobile-navigation-inner {
-    width: min(calc(100% - 32px), 600px);
-
-    margin: 0 auto;
-
-    padding: 10px 0 20px;
-  }
-
-  .mobile-navigation-inner > a {
-    min-height: 52px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 4px;
-
-    border-bottom: 1px solid #edf1f0;
-
-    color: var(--text-primary);
-
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-  .mobile-navigation-inner > a svg {
-    color: var(--text-light);
+  .site-brand-name span:first-child {
     font-size: 16px;
   }
 
-  .mobile-navigation-inner > a:hover {
-    color: var(--primary);
+
+  .site-brand-name span:last-child {
+    font-size: 12px;
   }
 
-  /* Contact box */
 
-  .mobile-contact-box {
-    margin-top: 18px;
+  .site-brand-tagline {
+    font-size: 6.5px;
+  }
 
-    padding: 16px;
 
+  /* Mobile navigation */
+
+  .mobile-navigation {
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+    right: 0;
+
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid transparent;
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      transform 0.35s ease,
+      border-color 0.25s ease;
+
+    backdrop-filter: blur(20px);
+  }
+
+
+  .mobile-navigation-open {
+    max-height: calc(100vh - 68px);
+
+    border-bottom-color: rgba(11, 122, 117, 0.10);
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+
+    overflow-y: auto;
+  }
+
+
+  .mobile-navigation-inner {
+    width: calc(100% - 32px);
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 22px 0 25px;
+  }
+
+
+  /* Mobile menu header */
+
+  .mobile-navigation-header {
     display: flex;
+
     align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    padding: 0 3px;
+  }
+
+
+  .mobile-navigation-header span:first-child {
+    color: #93a09f;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  .mobile-navigation-header span:last-child {
+    color: #075e5a;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+  }
+
+
+  /* Mobile links */
+
+  .mobile-navigation-links {
+    border-top: 1px solid rgba(11, 122, 117, 0.09);
+  }
+
+
+  .mobile-nav-link {
+    display: grid;
+
+    grid-template-columns: 35px 1fr auto;
+
+    align-items: center;
+
+    min-height: 57px;
+
+    gap: 10px;
+
+    border-bottom: 1px solid rgba(11, 122, 117, 0.09);
+
+    color: #334444;
+  }
+
+
+  .mobile-nav-number {
+    color: #9aaba8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+  }
+
+
+  .mobile-nav-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+  }
+
+
+  .mobile-nav-link svg {
+    color: #0b7a75;
+
+    font-size: 17px;
+
+    transition: transform 0.2s ease;
+  }
+
+
+  .mobile-nav-link:hover .mobile-nav-label {
+    color: #075e5a;
+  }
+
+
+  .mobile-nav-link:hover svg {
+    transform: translate(3px, -3px);
+  }
+
+
+  /* Contact */
+
+  .mobile-contact-card {
+    display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
 
     gap: 15px;
 
-    background: var(--surface);
+    margin-top: 22px;
 
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    padding: 15px;
+
+    border: 1px solid rgba(11, 122, 117, 0.11);
+
+    border-radius: 12px;
+
+    background: #f5faf9;
   }
 
-  .mobile-contact-box small {
-    display: block;
 
-    margin-bottom: 3px;
+  .mobile-contact-info {
+    display: flex;
 
-    color: var(--text-light);
+    flex-direction: column;
 
-    font-size: 11px;
+    gap: 5px;
   }
 
-  .mobile-contact-box > div > a {
-    color: var(--text-primary);
 
-    font-size: 14px;
+  .mobile-contact-info span {
+    color: #879795;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .mobile-contact-info a {
+    color: #075e5a;
+
+    font-size: 12px;
+
     font-weight: 700;
   }
 
-  .mobile-whatsapp {
+
+  .mobile-whatsapp-button {
     display: inline-flex;
+
     align-items: center;
-    gap: 5px;
+
+    gap: 7px;
+
+    flex-shrink: 0;
 
     padding: 9px 12px;
 
-    border-radius: 9px;
+    border-radius: 7px;
 
-    background: #20b95c;
+    background: #075e5a;
+
     color: #ffffff;
 
-    font-size: 11px;
+    font-size: 9px;
+
     font-weight: 700;
   }
 
-  .mobile-whatsapp svg {
+
+  .mobile-whatsapp-button svg {
     font-size: 13px;
   }
-}
-.modern-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  flex-shrink: 0;
+
 }
 
-.modern-logo img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-name {
-  color: #172121;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.brand-tagline {
-  margin-top: 4px;
-  color: #7b8988;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-/* =========================
+/* =====================================================
    SMALL MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 480px) {
 
-  .modern-header-container {
+  .site-header-inner {
     width: calc(100% - 24px);
   }
 
-  .modern-logo img {
-    height: 40px;
+
+  .site-brand-mark {
+    width: 39px;
+    height: 39px;
   }
 
-  .header-phone {
+
+  .site-brand-name {
+    gap: 4px;
+  }
+
+
+  .site-brand-name span:first-child {
+    font-size: 15px;
+  }
+
+
+  .site-brand-name span:last-child {
+    font-size: 11px;
+  }
+
+
+  .site-brand-tagline {
+    font-size: 5.8px;
+
+    letter-spacing: 0.11em;
+  }
+
+
+  .site-brand-line {
+    margin: 4px 0 3px;
+  }
+
+
+  .site-phone {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .site-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .site-brand-tagline,
+  .site-brand-line {
     display: none;
   }
 
-  .mobile-menu-button {
-    width: 40px;
-    height: 40px;
+
+  .site-brand-name {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2px;
   }
+
+
+  .site-brand-name span:first-child {
+    font-size: 14px;
+  }
+
+
+  .site-brand-name span:last-child {
+    font-size: 9px;
+
+    letter-spacing: 0.05em;
+  }
+
 }

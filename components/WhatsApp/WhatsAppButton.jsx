@@ -1,6 +1,6 @@
 import { FiMessageCircle } from 'react-icons/fi';
 
-//import './WhatsAppButton.css';
+import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
   return (
