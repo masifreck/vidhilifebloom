@@ -1,0 +1,659 @@
+.healthcare-staff-page {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 90px;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(11, 122, 117, 0.045),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbfb 100%
+    );
+}
+
+.healthcare-staff-container {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.healthcare-staff-bg-line {
+  position: absolute;
+  border: 1px solid rgba(11, 122, 117, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.healthcare-staff-bg-line-one {
+  width: 950px;
+  height: 520px;
+  top: 430px;
+  right: -470px;
+  transform: rotate(-12deg);
+}
+
+.healthcare-staff-bg-line-two {
+  width: 850px;
+  height: 460px;
+  bottom: 150px;
+  left: -450px;
+  transform: rotate(12deg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.healthcare-staff-hero {
+  margin-bottom: 80px;
+}
+
+.healthcare-staff-hero-image {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 28px;
+  isolation: isolate;
+  box-shadow: var(--shadow-lg);
+}
+
+.healthcare-staff-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.healthcare-staff-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 40, 40, 0.88) 0%,
+      rgba(7, 40, 40, 0.58) 45%,
+      rgba(7, 40, 40, 0.14) 100%
+    );
+}
+
+.healthcare-staff-hero-content {
+  position: absolute;
+  left: 56px;
+  bottom: 58px;
+  width: min(630px, calc(100% - 120px));
+  color: #ffffff;
+}
+
+.healthcare-staff-hero-content > span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.healthcare-staff-hero-content h1 {
+  margin: 0;
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.healthcare-staff-hero-content h1 strong {
+  color: #a8dfd9;
+  font-weight: 600;
+}
+
+.healthcare-staff-hero-content p {
+  max-width: 540px;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.healthcare-staff-hero-index {
+  position: absolute;
+  top: 30px;
+  right: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.healthcare-staff-hero-index span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.healthcare-staff-hero-index small {
+  margin-top: 2px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.healthcare-staff-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.healthcare-staff-section-heading.compact {
+  margin-bottom: 28px;
+}
+
+.healthcare-staff-section-heading > div {
+  max-width: 650px;
+}
+
+.healthcare-staff-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.healthcare-staff-section-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.healthcare-staff-section-heading h2 span {
+  color: var(--primary);
+}
+
+.healthcare-staff-section-heading > p {
+  max-width: 360px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   FEATURED CARDS
+========================= */
+
+.healthcare-staff-feature-section {
+  margin-bottom: 88px;
+}
+
+.healthcare-staff-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.healthcare-staff-feature-card {
+  position: relative;
+  min-height: 285px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #ffffff;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.healthcare-staff-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11, 122, 117, 0.18);
+}
+
+.healthcare-staff-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.healthcare-staff-number {
+  color: #a5b3b2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.healthcare-staff-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.theme-teal .healthcare-staff-icon {
+  color: #0b7a75;
+  background: #e8f7f5;
+}
+
+.theme-blue .healthcare-staff-icon {
+  color: #3978c7;
+  background: #edf4fd;
+}
+
+.theme-violet .healthcare-staff-icon {
+  color: #7658bd;
+  background: #f1edfb;
+}
+
+.healthcare-staff-card-content {
+  margin-top: 42px;
+}
+
+.healthcare-staff-card-content h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.healthcare-staff-card-content p {
+  max-width: 310px;
+  margin: 11px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.healthcare-staff-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 25px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.healthcare-staff-arrow {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.healthcare-staff-feature-card:hover .healthcare-staff-arrow {
+  transform: translateX(3px);
+  background: var(--primary-light);
+}
+
+
+/* =========================
+   WORKFORCE GRID
+========================= */
+
+.healthcare-staff-workforce-section {
+  margin-bottom: 80px;
+}
+
+.healthcare-staff-workforce-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.healthcare-staff-workforce-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+  min-height: 135px;
+  padding: 22px 50px 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 3px 14px rgba(23, 33, 33, 0.035);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.healthcare-staff-workforce-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.healthcare-staff-workforce-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 22px;
+}
+
+.service-orange .healthcare-staff-workforce-icon {
+  color: #d48632;
+  background: #fff4e7;
+}
+
+.service-green .healthcare-staff-workforce-icon {
+  color: #3b9369;
+  background: #eaf7f0;
+}
+
+.service-blue .healthcare-staff-workforce-icon {
+  color: #3978c7;
+  background: #edf4fd;
+}
+
+.service-rose .healthcare-staff-workforce-icon {
+  color: #c65c78;
+  background: #fcedf1;
+}
+
+.service-indigo .healthcare-staff-workforce-icon {
+  color: #5969b8;
+  background: #eef0fb;
+}
+
+.service-mint .healthcare-staff-workforce-icon {
+  color: #278c79;
+  background: #e8f7f3;
+}
+
+.healthcare-staff-workforce-content > span {
+  color: #a9b5b4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.healthcare-staff-workforce-content h3 {
+  margin: 5px 0 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.healthcare-staff-workforce-content p {
+  max-width: 430px;
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.healthcare-staff-workforce-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  color: var(--text-light);
+  font-size: 17px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.healthcare-staff-workforce-card:hover
+  .healthcare-staff-workforce-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.healthcare-staff-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  padding: 42px 48px;
+  border-radius: 24px;
+  background: #075e5a;
+  color: #ffffff;
+}
+
+.healthcare-staff-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.healthcare-staff-cta-content > span {
+  color: #9ddbd5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.healthcare-staff-cta-content h2 {
+  margin: 10px 0 8px;
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.healthcare-staff-cta-content h2 span {
+  color: #a8dfd9;
+}
+
+.healthcare-staff-cta-content p {
+  max-width: 540px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.healthcare-staff-cta-button {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-radius: 11px;
+  background: #ffffff;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.healthcare-staff-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .healthcare-staff-hero-image {
+    height: 390px;
+  }
+
+  .healthcare-staff-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .healthcare-staff-feature-card {
+    min-height: 250px;
+  }
+
+  .healthcare-staff-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .healthcare-staff-page {
+    padding: 35px 0 65px;
+  }
+
+  .healthcare-staff-container {
+    width: min(100% - 28px, 1240px);
+  }
+
+  .healthcare-staff-hero {
+    margin-bottom: 55px;
+  }
+
+  .healthcare-staff-hero-image {
+    height: 360px;
+    border-radius: 20px;
+  }
+
+  .healthcare-staff-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 40, 40, 0.08) 0%,
+        rgba(7, 40, 40, 0.82) 65%,
+        rgba(7, 40, 40, 0.94) 100%
+      );
+  }
+
+  .healthcare-staff-hero-content {
+    left: 25px;
+    bottom: 30px;
+    width: calc(100% - 50px);
+  }
+
+  .healthcare-staff-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .healthcare-staff-hero-content p {
+    margin-top: 13px;
+    font-size: 13px;
+  }
+
+  .healthcare-staff-hero-index {
+    top: 20px;
+    right: 20px;
+  }
+
+  .healthcare-staff-feature-section {
+    margin-bottom: 60px;
+  }
+
+  .healthcare-staff-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .healthcare-staff-workforce-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .healthcare-staff-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 25px;
+    border-radius: 20px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 430px) {
+  .healthcare-staff-hero-image {
+    height: 330px;
+  }
+
+  .healthcare-staff-hero-content h1 {
+    font-size: 29px;
+  }
+
+  .healthcare-staff-hero-content p {
+    font-size: 12px;
+  }
+
+  .healthcare-staff-feature-card {
+    padding: 22px;
+  }
+
+  .healthcare-staff-card-content {
+    margin-top: 30px;
+  }
+
+  .healthcare-staff-workforce-card {
+    padding: 19px 45px 19px 19px;
+    gap: 15px;
+  }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .healthcare-staff-feature-card,
+  .healthcare-staff-workforce-card,
+  .healthcare-staff-arrow,
+  .healthcare-staff-workforce-arrow,
+  .healthcare-staff-cta-button {
+    transition: none;
+  }
+}

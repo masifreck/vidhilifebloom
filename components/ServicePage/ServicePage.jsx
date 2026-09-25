@@ -12,7 +12,7 @@ const ServicePage = ({
   title,
   description,
   image,
-  services,
+   services = [],
 }) => {
   return (
     <div className="service-page">
@@ -41,27 +41,6 @@ const ServicePage = ({
 
             <p>{description}</p>
 
-            <div className="service-page-actions">
-
-              <a
-                href="https://wa.me/919090207519"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="service-primary-button"
-              >
-                Enquire on WhatsApp
-                <FiArrowRight />
-              </a>
-
-              <a
-                href="tel:9090207519"
-                className="service-phone-button"
-              >
-                <FiPhone />
-                Call us
-              </a>
-
-            </div>
 
           </div>
 
@@ -70,12 +49,12 @@ const ServicePage = ({
       </section>
 
 
-      {/* SERVICES */}
+ 
       <section className="service-list-section">
 
         <div className="container">
 
-          <div className="service-list-heading">
+          {/* <div className="service-list-heading">
 
             <span className="section-label">
               WHAT WE OFFER
@@ -86,7 +65,7 @@ const ServicePage = ({
               <span> a difference</span>
             </h2>
 
-          </div>
+          </div> */}
 
 
           <div className="service-list-grid">
@@ -126,8 +105,7 @@ const ServicePage = ({
       </section>
 
 
-      {/* CTA */}
-      <section className="service-page-cta">
+      {/* <section className="service-page-cta">
 
         <div className="container">
 
@@ -160,7 +138,7 @@ const ServicePage = ({
 
         </div>
 
-      </section>
+      </section> */}
 
     </div>
   );

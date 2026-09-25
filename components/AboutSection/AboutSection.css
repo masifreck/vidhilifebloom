@@ -1,364 +1,270 @@
-.about-section {
-  padding: 95px 0;
-  background: var(--surface);
-}
-
-
-/* =========================================
-   LAYOUT
-========================================= */
-
-.about-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  align-items: center;
-  gap: 85px;
-}
-
-
-/* =========================================
-   IMAGE
-========================================= */
-
-.about-visual {
-  position: relative;
-  min-height: 560px;
-}
-
-.about-main-image {
-  width: calc(100% - 35px);
-  height: 510px;
-
-  overflow: hidden;
-
-  border-radius: 28px;
-
-  background: var(--surface-alt);
-}
-
-.about-main-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform 0.6s ease;
-}
-
-.about-visual:hover .about-main-image img {
-  transform: scale(1.025);
-}
-
-
-/* =========================================
-   FLOATING CARDS
-========================================= */
+/* =========================================================
+   25+ YEARS EXPERIENCE CARD
+   ========================================================= */
 
 .about-experience-card {
   position: absolute;
-
   left: -22px;
-  bottom: 35px;
+  bottom: 48px;
+
+  width: 185px;
+  min-height: 165px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 20px;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  box-shadow: 0 18px 45px rgba(11, 122, 117, 0.22);
+
+  z-index: 3;
+}
+
+.about-experience-icon {
+  width: 32px;
+  height: 32px;
 
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
 
-  padding: 15px 18px;
+  margin-bottom: 8px;
 
-  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
 
-  border-radius: 16px;
+  color: var(--accent);
 
-  box-shadow: var(--shadow-md);
+  font-size: 16px;
 }
 
 .about-experience-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 44px;
-  height: 44px;
-
-  border-radius: 12px;
-
-  color: #fff;
-  background: var(--primary);
-
-  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  line-height: 0.95;
   font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.about-experience-number span {
+  color: var(--accent);
 }
 
 .about-experience-text {
-  color: var(--text-primary);
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
-
-.about-check-card {
-  position: absolute;
-
-  top: 35px;
-  right: 0;
-
-  display: flex;
-  align-items: center;
-  gap: 11px;
-
-  padding: 13px 16px;
-
-  border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.95);
-
-  box-shadow: var(--shadow-md);
-}
-
-.about-check-card > svg {
-  width: 22px;
-  height: 22px;
-
-  color: var(--success);
-}
-
-.about-check-card div {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+
+  margin-top: 9px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 9px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
-.about-check-card strong {
-  color: var(--text-primary);
-  font-size: 12px;
-}
+.about-experience-text strong {
+  margin-top: 2px;
 
-.about-check-card span {
-  color: var(--text-secondary);
+  color: #ffffff;
+
   font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+/* =========================================================
+   ABOUT EXPERIENCE HIGHLIGHT
+   ========================================================= */
 
-.about-content {
-  max-width: 610px;
-}
-
-.about-content h2 {
-  margin: 11px 0 18px;
-
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1.1;
-
-  letter-spacing: -1.6px;
-
-  color: var(--text-primary);
-}
-
-.about-content h2 span {
-  color: var(--primary);
-}
-
-.about-intro {
-  margin: 0;
-
-  color: var(--text-secondary);
-
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.about-secondary {
-  margin: 12px 0 0;
-
-  color: var(--text-light);
-
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-
-/* =========================================
-   HIGHLIGHTS
-========================================= */
-
-.about-highlights {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 22px 18px;
-
-  margin-top: 32px;
-}
-
-.about-highlight {
+.about-experience-highlight {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 18px;
+
+  margin: 28px 0 22px;
+  padding: 20px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-.about-highlight-icon {
-  flex-shrink: 0;
+.about-experience-highlight-number {
+  flex: 0 0 auto;
 
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 11px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 
   color: var(--primary);
-  background: var(--primary-light);
+
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 800;
+
+  letter-spacing: -0.06em;
 }
 
-.about-highlight-icon svg {
-  width: 18px;
-  height: 18px;
+.about-experience-highlight-number span {
+  color: var(--accent);
 }
 
-.about-highlight h3 {
-  margin: 1px 0 4px;
+.about-experience-highlight-content {
+  padding-top: 1px;
+}
+
+.about-experience-highlight-content strong {
+  display: block;
 
   color: var(--text-primary);
 
   font-size: 14px;
-  font-weight: 700;
+  line-height: 1.4;
 }
 
-.about-highlight p {
-  margin: 0;
+.about-experience-highlight-content p {
+  max-width: 560px;
+
+  margin: 5px 0 0;
 
   color: var(--text-secondary);
 
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 
-/* =========================================
-   BUTTON
-========================================= */
+/* =========================================================
+   FINAL PARAGRAPH
+   ========================================================= */
 
-.about-button {
-  display: inline-flex;
+.about-final-text {
+  margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.about-values {
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 
-  margin-top: 34px;
-
-  padding: 13px 18px;
-
-  border-radius: 11px;
-
-  color: #fff;
-  background: var(--primary);
-
-  text-decoration: none;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  transition: all 0.25s ease;
+  margin-top: 24px;
+  margin-bottom: 28px;
 }
 
-.about-button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
+.about-values span {
+  color: var(--primary);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
 }
 
-.about-button svg {
-  width: 16px;
-  height: 16px;
+.about-values i {
+  color: var(--accent);
+
+  font-size: 12px;
+  font-style: normal;
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1000px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 55px;
-  }
-
-  .about-visual {
-    max-width: 650px;
-  }
-
-  .about-content {
-    max-width: 700px;
-  }
-}
-
-
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   ========================================================= */
 
-@media (max-width: 600px) {
-  .about-section {
-    padding: 65px 0;
-  }
-
-  .about-layout {
-    gap: 40px;
-  }
-
-  .about-visual {
-    min-height: 410px;
-  }
-
-  .about-main-image {
-    width: calc(100% - 15px);
-    height: 380px;
-
-    border-radius: 21px;
-  }
+@media (max-width: 800px) {
 
   .about-experience-card {
-    left: 8px;
-    bottom: 10px;
+    left: 15px;
+    bottom: 30px;
 
-    padding: 11px 13px;
+    width: 170px;
+    min-height: 150px;
   }
 
   .about-experience-number {
-    width: 38px;
-    height: 38px;
+    font-size: 42px;
   }
 
-  .about-check-card {
-    top: 18px;
-    right: 0;
+  .about-experience-highlight {
+    margin-top: 24px;
+  }
+}
 
-    padding: 10px 12px;
+
+@media (max-width: 600px) {
+
+  .about-experience-card {
+    left: 12px;
+    bottom: 20px;
+
+    width: 155px;
+    min-height: 140px;
+
+    padding: 17px;
+
+    border-radius: 16px;
   }
 
-  .about-content h2 {
-    font-size: 32px;
-    letter-spacing: -1px;
-  }
+  .about-experience-icon {
+    width: 28px;
+    height: 28px;
 
-  .about-intro {
+    margin-bottom: 6px;
+
     font-size: 14px;
   }
 
-  .about-secondary {
+  .about-experience-number {
+    font-size: 38px;
+  }
+
+  .about-experience-text {
+    font-size: 8px;
+  }
+
+  .about-experience-text strong {
+    font-size: 9px;
+  }
+
+  .about-experience-highlight {
+    gap: 14px;
+    padding: 17px 0;
+  }
+
+  .about-experience-highlight-number {
+    font-size: 32px;
+  }
+
+  .about-experience-highlight-content strong {
     font-size: 13px;
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr;
-    gap: 17px;
+  .about-experience-highlight-content p {
+    font-size: 11px;
+  }
+
+  .about-values {
+    gap: 6px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .about-values span {
+    font-size: 8px;
   }
 }

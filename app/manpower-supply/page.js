@@ -1,36 +1,11 @@
-import ServicePage from '@/components/ServicePage/ServicePage';
+import HealthcareStaffServices from '@/components/HealthcareStaffServices/HealthcareStaffServices';
 
-const services = [
-  {
-    title: 'Skilled Workforce',
-    description:
-      'Workforce solutions for roles requiring specific skills and experience.',
-  },
-  {
-    title: 'Support Staff',
-    description:
-      'Reliable staff solutions for day-to-day operational requirements.',
-  },
-  {
-    title: 'Contract Manpower',
-    description:
-      'Flexible workforce support based on organizational requirements.',
-  },
-  {
-    title: 'Staffing Solutions',
-    description:
-      'Practical manpower solutions tailored to business needs.',
-  },
-];
+export const metadata = {
+  title: 'Healthcare Staff Solutions',
+  description:
+    'Healthcare workforce solutions including nursing staff, patient care attendants, caregivers and healthcare support staff.',
+};
 
 export default function ManpowerSupplyPage() {
-  return (
-    <ServicePage
-      eyebrow="MANPOWER SUPPLY"
-      title="The right people for your needs."
-      description="Reliable manpower and staffing solutions for businesses, organizations and operational requirements."
-      image="/images/manpower/manpower.jpg"
-      services={services}
-    />
-  );
+  return <HealthcareStaffServices />;
 }

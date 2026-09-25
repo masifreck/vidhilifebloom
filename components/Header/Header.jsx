@@ -7,7 +7,6 @@ import Link from 'next/link';
 import {
   FiArrowUpRight,
   FiMenu,
-  FiPhone,
   FiX,
 } from 'react-icons/fi';
 
@@ -38,10 +37,18 @@ const navigation = [
     label: 'About',
     href: '/about',
   },
+  {
+    label: 'Careers',
+    href: '/careers',
+  },
 ];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((previous) => !previous);
+  };
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -72,7 +79,6 @@ const Header = () => {
               priority
             />
           </div>
-
 
           <div className="site-brand-copy">
 
@@ -111,14 +117,41 @@ const Header = () => {
             </Link>
           ))}
 
+          {/* Desktop Contact CTA */}
+
+          <Link
+            href="/contact"
+            className="site-nav-contact"
+          >
+            Contact
+            <FiArrowUpRight />
+          </Link>
+
         </nav>
 
 
         {/* =====================================
-            ACTIONS
+            MOBILE MENU BUTTON
         ====================================== */}
 
-       
+        <button
+          type="button"
+          className={`mobile-menu-button ${
+            menuOpen ? 'mobile-menu-button-open' : ''
+          }`}
+          onClick={toggleMenu}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+        >
+
+          {menuOpen ? (
+            <FiX />
+          ) : (
+            <FiMenu />
+          )}
+
+        </button>
 
       </div>
 
@@ -128,6 +161,7 @@ const Header = () => {
       ====================================== */}
 
       <div
+        id="mobile-navigation"
         className={
           menuOpen
             ? 'mobile-navigation mobile-navigation-open'
@@ -136,6 +170,8 @@ const Header = () => {
       >
 
         <div className="mobile-navigation-inner">
+
+          {/* Mobile menu header */}
 
           <div className="mobile-navigation-header">
 
@@ -150,7 +186,12 @@ const Header = () => {
           </div>
 
 
-          <div className="mobile-navigation-links">
+          {/* Mobile navigation links */}
+
+          <nav
+            className="mobile-navigation-links"
+            aria-label="Mobile navigation"
+          >
 
             {navigation.map((item, index) => (
               <Link
@@ -173,12 +214,22 @@ const Header = () => {
               </Link>
             ))}
 
-          </div>
 
+            {/* Mobile Contact */}
 
-          {/* Mobile contact */}
+            <Link
+              href="/contact"
+              className="mobile-nav-contact"
+              onClick={closeMenu}
+            >
+              <span>
+                Contact Us
+              </span>
 
-    
+              <FiArrowUpRight />
+            </Link>
+
+          </nav>
 
         </div>
 

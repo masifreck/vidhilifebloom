@@ -1,0 +1,635 @@
+.investigation-page {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 90px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(11, 122, 117, 0.05),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbfb 100%
+    );
+}
+
+.investigation-container {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.investigation-bg-line {
+  position: absolute;
+  border: 1px solid rgba(11, 122, 117, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.investigation-bg-line-one {
+  width: 900px;
+  height: 500px;
+  top: 420px;
+  right: -420px;
+  transform: rotate(-12deg);
+}
+
+.investigation-bg-line-two {
+  width: 800px;
+  height: 450px;
+  bottom: 180px;
+  left: -420px;
+  transform: rotate(15deg);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.investigation-hero {
+  margin-bottom: 80px;
+}
+
+.investigation-hero-image {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 28px;
+  isolation: isolate;
+  box-shadow: var(--shadow-lg);
+}
+
+.investigation-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.investigation-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 40, 40, 0.88) 0%,
+      rgba(7, 40, 40, 0.58) 45%,
+      rgba(7, 40, 40, 0.15) 100%
+    );
+}
+
+.investigation-hero-content {
+  position: absolute;
+  left: 56px;
+  bottom: 58px;
+  width: min(620px, calc(100% - 120px));
+  color: #ffffff;
+}
+
+.investigation-hero-content > span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.investigation-hero-content h1 {
+  margin: 0;
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.investigation-hero-content h1 strong {
+  color: #a8dfd9;
+  font-weight: 600;
+}
+
+.investigation-hero-content p {
+  max-width: 540px;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.investigation-hero-index {
+  position: absolute;
+  right: 34px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.investigation-hero-index span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.investigation-hero-index small {
+  margin-top: 2px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.investigation-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.investigation-section-heading.compact {
+  margin-bottom: 28px;
+}
+
+.investigation-section-heading > div {
+  max-width: 650px;
+}
+
+.investigation-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.investigation-section-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.investigation-section-heading h2 span {
+  color: var(--primary);
+}
+
+.investigation-section-heading > p {
+  max-width: 360px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   INSURANCE CARDS
+========================= */
+
+.investigation-feature-section {
+  margin-bottom: 88px;
+}
+
+.insurance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.insurance-card {
+  position: relative;
+  min-height: 285px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #ffffff;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.insurance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11, 122, 117, 0.18);
+}
+
+.insurance-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.insurance-number {
+  color: #a5b3b2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.insurance-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.insurance-blue .insurance-icon {
+  color: #3978c7;
+  background: #edf4fd;
+}
+
+.insurance-teal .insurance-icon {
+  color: #0b7a75;
+  background: #e8f7f5;
+}
+
+.insurance-violet .insurance-icon {
+  color: #7658bd;
+  background: #f1edfb;
+}
+
+.insurance-card-content {
+  margin-top: 42px;
+}
+
+.insurance-card-content h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.insurance-card-content p {
+  max-width: 310px;
+  margin: 11px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.insurance-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 25px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.insurance-arrow {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.insurance-card:hover .insurance-arrow {
+  transform: translateX(3px);
+  background: var(--primary-light);
+}
+
+
+/* =========================
+   GENERAL INVESTIGATION
+========================= */
+
+.investigation-services-section {
+  margin-bottom: 80px;
+}
+
+.investigation-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.investigation-service-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 135px;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 3px 14px rgba(23, 33, 33, 0.035);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.investigation-service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.investigation-service-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 22px;
+}
+
+.service-orange .investigation-service-icon {
+  color: #d48632;
+  background: #fff4e7;
+}
+
+.service-blue .investigation-service-icon {
+  color: #3978c7;
+  background: #edf4fd;
+}
+
+.service-green .investigation-service-icon {
+  color: #3b9369;
+  background: #eaf7f0;
+}
+
+.service-violet .investigation-service-icon {
+  color: #7658bd;
+  background: #f1edfb;
+}
+
+.investigation-service-content h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.investigation-service-content p {
+  max-width: 400px;
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.investigation-service-number {
+  align-self: flex-start;
+  color: #b4c0bf;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.investigation-service-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  color: var(--text-light);
+  font-size: 17px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.investigation-service-card:hover .investigation-service-arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.investigation-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  padding: 42px 48px;
+  border-radius: 24px;
+  background: #075e5a;
+  color: #ffffff;
+}
+
+.investigation-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.investigation-cta-content > span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #9ddbd5;
+}
+
+.investigation-cta-content h2 {
+  margin: 10px 0 8px;
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.investigation-cta-content h2 span {
+  color: #a8dfd9;
+}
+
+.investigation-cta-content p {
+  margin: 0;
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.investigation-cta-button {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-radius: 11px;
+  background: #ffffff;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.investigation-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .investigation-hero-image {
+    height: 390px;
+  }
+
+  .insurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insurance-card {
+    min-height: 250px;
+  }
+
+  .investigation-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .investigation-page {
+    padding: 35px 0 65px;
+  }
+
+  .investigation-container {
+    width: min(100% - 28px, 1240px);
+  }
+
+  .investigation-hero {
+    margin-bottom: 55px;
+  }
+
+  .investigation-hero-image {
+    height: 360px;
+    border-radius: 20px;
+  }
+
+  .investigation-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 40, 40, 0.08) 0%,
+        rgba(7, 40, 40, 0.82) 65%,
+        rgba(7, 40, 40, 0.94) 100%
+      );
+  }
+
+  .investigation-hero-content {
+    left: 25px;
+    bottom: 30px;
+    width: calc(100% - 50px);
+  }
+
+  .investigation-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .investigation-hero-content p {
+    margin-top: 13px;
+    font-size: 13px;
+  }
+
+  .investigation-hero-index {
+    top: 20px;
+    right: 20px;
+  }
+
+  .investigation-feature-section {
+    margin-bottom: 60px;
+  }
+
+  .investigation-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .investigation-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investigation-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 25px;
+    border-radius: 20px;
+  }
+}
+
+
+@media (max-width: 430px) {
+  .investigation-hero-image {
+    height: 330px;
+  }
+
+  .investigation-hero-content h1 {
+    font-size: 29px;
+  }
+
+  .investigation-hero-content p {
+    font-size: 12px;
+  }
+
+  .insurance-card {
+    padding: 22px;
+  }
+
+  .insurance-card-content {
+    margin-top: 30px;
+  }
+
+  .investigation-service-card {
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    padding: 19px;
+  }
+
+  .investigation-service-number {
+    display: none;
+  }
+
+  .investigation-service-arrow {
+    right: 18px;
+    bottom: 16px;
+  }
+}

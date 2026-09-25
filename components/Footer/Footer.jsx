@@ -6,6 +6,7 @@ import {
   FiMapPin,
   FiMessageCircle,
   FiPhone,
+  FiMail
 } from 'react-icons/fi';
 
 import './Footer.css';
@@ -162,10 +163,7 @@ const Footer = () => {
               CONTACT US
             </span>
 
-
-            {/* Phone */}
-
-            <a
+            {/* <a
               href="tel:9090207519"
               className="footer-contact-item"
             >
@@ -183,7 +181,7 @@ const Footer = () => {
             </a>
 
 
-            {/* WhatsApp */}
+   
 
             <a
               href="https://wa.me/919090207519"
@@ -203,10 +201,26 @@ const Footer = () => {
                   <FiArrowRight />
                 </strong>
               </div>
-            </a>
+            </a> */}
 
 
             {/* Location */}
+            <a
+  href="mailto:info@vlhpl.com"
+  className="footer-contact-item"
+>
+  <div className="footer-contact-icon">
+    <FiMail />
+  </div>
+
+  <div className="footer-contact-info">
+    <small>EMAIL</small>
+
+    <strong>
+      info@vlhpl.com
+    </strong>
+  </div>
+</a>
 
             <div className="footer-contact-item">
               <div className="footer-contact-icon">

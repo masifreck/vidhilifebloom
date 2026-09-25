@@ -6,6 +6,7 @@ import {
   FiShield,
   FiUsers,
   FiTarget,
+  FiAward,
 } from 'react-icons/fi';
 
 import './AboutSection.css';
@@ -14,22 +15,26 @@ const highlights = [
   {
     icon: FiHeart,
     title: 'People First',
-    description: 'Services built around real people and their needs.',
+    description:
+      'Meaningful care experiences built around people and their needs.',
   },
   {
     icon: FiShield,
-    title: 'Professional',
-    description: 'A dependable approach across every service.',
+    title: 'Integrity',
+    description:
+      'Professional, confidential and dependable service delivery.',
   },
   {
     icon: FiUsers,
     title: 'Experienced Team',
-    description: 'Dedicated professionals supporting every requirement.',
+    description:
+      'Experienced professionals bringing expertise across our services.',
   },
   {
     icon: FiTarget,
-    title: 'Focused Solutions',
-    description: 'Practical solutions tailored to each situation.',
+    title: 'Client Focused',
+    description:
+      'Responsive solutions designed around individual and organizational requirements.',
   },
 ];
 
@@ -40,7 +45,10 @@ const AboutSection = () => {
 
         <div className="about-layout">
 
-          {/* IMAGE SIDE */}
+          {/* =========================
+              IMAGE SIDE
+          ========================== */}
+
           <div className="about-visual">
 
             <div className="about-main-image">
@@ -50,52 +58,112 @@ const AboutSection = () => {
               />
             </div>
 
+            {/* 25+ YEARS */}
             <div className="about-experience-card">
-              <span className="about-experience-number">
-                VLH
-              </span>
 
-              <span className="about-experience-text">
-                Care & Service
-              </span>
+              <div className="about-experience-icon">
+                <FiAward />
+              </div>
+
+              <div className="about-experience-number">
+                25<span>+</span>
+              </div>
+
+              <div className="about-experience-text">
+                Years of
+                <strong>Professional Experience</strong>
+              </div>
+
             </div>
 
             <div className="about-check-card">
+
               <FiCheckCircle />
 
               <div>
                 <strong>Trusted Service</strong>
                 <span>Across multiple sectors</span>
               </div>
+
             </div>
 
           </div>
 
 
-          {/* CONTENT SIDE */}
+          {/* =========================
+              CONTENT SIDE
+          ========================== */}
+
           <div className="about-content">
 
             <span className="section-label">
-              WHY CHOOSE US
+              ABOUT VIDHI LIFEBLOOM
             </span>
 
             <h2>
-              One trusted name,
-              <span> multiple solutions.</span>
+              Empowering Care.
+              <span> Enabling Wellness.</span>
+              Building Trust.
             </h2>
 
             <p className="about-intro">
-              Vidhi Lifebloom Healthcare Private Limited brings
-              together professional services across care, wellness,
-              investigation and manpower support.
+              Vidhi Lifebloom Healthcare Private Limited is a dynamic
+              healthcare and professional support organization delivering
+              integrated solutions across Home Care, Wellness,
+              Investigation, and Manpower Services.
             </p>
 
             <p className="about-secondary">
-              Our approach is simple — understand the requirement,
-              provide dependable support and focus on delivering
-              a professional experience.
+              With a strong foundation in the healthcare service industry,
+              we are driven by experienced professionals who bring together
+              expertise, integrity, innovation, and a commitment to excellence.
             </p>
 
+            {/* EXPERIENCE HIGHLIGHT */}
+
+            <div className="about-experience-highlight">
+
+              <div className="about-experience-highlight-number">
+                25<span>+</span>
+              </div>
+
+              <div className="about-experience-highlight-content">
+                <strong>
+                  Years of professional experience
+                </strong>
+
+                <p>
+                  Our management team brings more than 25 years of
+                  professional experience, strengthening our ability to
+                  deliver responsive, reliable, confidential, and
+                  client-centric services.
+                </p>
+              </div>
+
+            </div>
+
+
+            <p className="about-secondary about-final-text">
+              We go beyond delivering services — we strive to create
+              meaningful care experiences, dependable support, and lasting
+              value for every individual and organization we serve.
+            </p>
+
+
+            {/* VALUES */}
+
+            <div className="about-values">
+              <span>EXPERTISE</span>
+              <i>•</i>
+              <span>INTEGRITY</span>
+              <i>•</i>
+              <span>INNOVATION</span>
+              <i>•</i>
+              <span>CARE</span>
+            </div>
+
+
+            {/* HIGHLIGHTS */}
 
             <div className="about-highlights">
 
@@ -113,6 +181,7 @@ const AboutSection = () => {
 
                     <div>
                       <h3>{item.title}</h3>
+
                       <p>{item.description}</p>
                     </div>
                   </div>
@@ -120,9 +189,6 @@ const AboutSection = () => {
               })}
 
             </div>
-
-
-        
 
           </div>
 

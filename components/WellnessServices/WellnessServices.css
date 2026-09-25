@@ -1,0 +1,1630 @@
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.wellness-page {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 100vh;
+
+  padding: 72px 0 105px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfdfc 50%,
+      #ffffff 100%
+    );
+
+  color: #253936;
+}
+
+
+/* =========================================================
+   BACKGROUND CURVES
+========================================================= */
+
+.wellness-bg-line {
+  position: absolute;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(11, 122, 117, 0.065);
+
+  border-radius: 50%;
+}
+
+.wellness-bg-line-one {
+  width: 1050px;
+  height: 470px;
+
+  top: 170px;
+  left: -760px;
+
+  transform: rotate(-12deg);
+}
+
+.wellness-bg-line-two {
+  width: 1300px;
+  height: 570px;
+
+  top: 950px;
+  right: -900px;
+
+  transform: rotate(10deg);
+}
+
+.wellness-bg-line-three {
+  width: 1100px;
+  height: 520px;
+
+  top: 1650px;
+  left: -800px;
+
+  transform: rotate(-8deg);
+}
+
+.wellness-bg-circle {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: rgba(11, 122, 117, .025);
+}
+
+.wellness-bg-circle-one {
+  width: 340px;
+  height: 340px;
+
+  top: 450px;
+  right: -180px;
+}
+
+.wellness-bg-circle-two {
+  width: 270px;
+  height: 270px;
+
+  top: 1320px;
+  left: -130px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.wellness-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1240px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.wellness-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 55px;
+
+  margin-bottom: 58px;
+}
+
+.wellness-header-content {
+  max-width: 700px;
+}
+
+.wellness-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #0b7a75;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+}
+
+.wellness-eyebrow::before {
+  content: '';
+
+  width: 24px;
+  height: 1px;
+
+  background: #0b7a75;
+}
+
+.wellness-header h1 {
+  margin: 0;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  color: #293c39;
+
+  font-size: clamp(38px, 4.2vw, 55px);
+
+  line-height: 1.07;
+
+  font-weight: 700;
+
+  letter-spacing: -.055em;
+}
+
+.wellness-header h1 span {
+  color: #0b7a75;
+}
+
+.wellness-header p {
+  max-width: 570px;
+
+  margin: 18px 0 0;
+
+  color: #7f8e8a;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.wellness-search {
+  width: 320px;
+  height: 49px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 0 15px;
+
+  border: 1px solid #dce7e5;
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, .92);
+
+  box-shadow:
+    0 10px 30px rgba(29, 70, 67, .045);
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.wellness-search:focus-within {
+  border-color: rgba(11, 122, 117, .35);
+
+  box-shadow:
+    0 12px 32px rgba(11, 122, 117, .08);
+}
+
+.wellness-search svg {
+  flex-shrink: 0;
+
+  color: #879692;
+
+  font-size: 19px;
+}
+
+.wellness-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #344744;
+
+  font-family: inherit;
+
+  font-size: 11px;
+}
+
+.wellness-search input::placeholder {
+  color: #a1adaa;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 27px;
+}
+
+.section-heading.compact {
+  margin-bottom: 23px;
+}
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #93a29e;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: .18em;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #30423f;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  font-weight: 650;
+
+  letter-spacing: -.04em;
+}
+
+.section-heading h2 span {
+  color: #0b7a75;
+}
+
+.section-heading > p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #899793;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HEALTH CHECK SECTION
+========================================================= */
+
+.health-check-section {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-bottom: 75px;
+
+  padding: 39px;
+
+  border: 1px solid #dce9e6;
+
+  border-radius: 27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf8f6 0%,
+      #f9fcfb 53%,
+      #eef6f5 100%
+    );
+
+  box-shadow:
+    0 20px 55px rgba(25, 70, 66, .055);
+}
+
+.health-check-section::before {
+  content: '';
+
+  position: absolute;
+
+  width: 700px;
+  height: 330px;
+
+  right: -330px;
+  bottom: -250px;
+
+  border: 1px solid rgba(11, 122, 117, .07);
+
+  border-radius: 50%;
+}
+
+.health-check-section::after {
+  content: '';
+
+  position: absolute;
+
+  width: 530px;
+  height: 250px;
+
+  right: -210px;
+  bottom: -180px;
+
+  border: 1px solid rgba(11, 122, 117, .05);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   HEALTH CHECK GRID
+========================================================= */
+
+.health-check-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   HEALTH CHECK CARD
+========================================================= */
+
+.health-check-card {
+  position: relative;
+
+  min-height: 275px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  padding: 23px;
+
+  border: 1px solid rgba(31, 70, 67, .075);
+
+  border-radius: 21px;
+
+  background: rgba(255, 255, 255, .96);
+
+  text-decoration: none;
+
+  box-shadow:
+    0 7px 24px rgba(28, 65, 62, .035);
+
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.health-check-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(11, 122, 117, .18);
+
+  box-shadow:
+    0 24px 45px rgba(28, 65, 62, .11);
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.health-check-glow {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: -125px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  transition:
+    transform .4s ease;
+}
+
+.health-check-card:hover .health-check-glow {
+  transform: scale(1.2);
+}
+
+.theme-blue .health-check-glow {
+  background: #e7f1ff;
+}
+
+.theme-violet .health-check-glow {
+  background: #eeeaff;
+}
+
+.theme-orange .health-check-glow {
+  background: #fff0df;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.health-check-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.health-check-number {
+  color: #a5b2af;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .14em;
+}
+
+
+/* =========================================================
+   HEALTH ICON
+========================================================= */
+
+.health-check-icon {
+  position: relative;
+
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 24px;
+
+  transform: rotate(3deg);
+
+  transition:
+    transform .3s ease;
+}
+
+.health-check-card:hover .health-check-icon {
+  transform:
+    rotate(-3deg)
+    scale(1.06);
+}
+
+.health-check-icon-bg {
+  position: absolute;
+
+  inset: 6px;
+
+  border-radius: 19px;
+
+  background: rgba(255, 255, 255, .7);
+}
+
+.health-check-icon::after {
+  content: '';
+
+  position: absolute;
+
+  right: -4px;
+  bottom: -3px;
+
+  width: 13px;
+  height: 13px;
+
+  border: 3px solid #fff;
+
+  border-radius: 50%;
+}
+
+.health-check-icon svg {
+  position: relative;
+
+  z-index: 3;
+
+  font-size: 31px;
+}
+
+
+/* icon colors */
+
+.theme-blue .health-check-icon {
+  background: #dcecff;
+  color: #4b80b9;
+}
+
+.theme-blue .health-check-icon::after {
+  background: #70a4d6;
+}
+
+.theme-violet .health-check-icon {
+  background: #ebe5ff;
+  color: #7565b1;
+}
+
+.theme-violet .health-check-icon::after {
+  background: #9788cf;
+}
+
+.theme-orange .health-check-icon {
+  background: #ffead4;
+  color: #c67c3d;
+}
+
+.theme-orange .health-check-icon::after {
+  background: #e2a068;
+}
+
+
+/* =========================================================
+   HEALTH CHECK CONTENT
+========================================================= */
+
+.health-check-content {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 23px;
+}
+
+.health-check-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #99a6a3;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: .16em;
+}
+
+.health-check-content h3 {
+  max-width: 280px;
+
+  margin: 0;
+
+  color: #30413e;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.35;
+
+  font-weight: 650;
+
+  letter-spacing: -.025em;
+}
+
+.health-check-content p {
+  max-width: 285px;
+
+  margin: 9px 0 0;
+
+  color: #84918e;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.health-check-footer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding-top: 17px;
+
+  color: #0b7a75;
+
+  font-size: 9px;
+
+  font-weight: 750;
+}
+
+.round-arrow {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #dce8e5;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.round-arrow svg {
+  font-size: 14px;
+}
+
+.health-check-card:hover .round-arrow {
+  transform: translateX(3px);
+
+  background: #eaf7f5;
+}
+
+
+/* =========================================================
+   EVERYDAY HEALTHCARE
+========================================================= */
+
+.healthcare-section {
+  margin-bottom: 76px;
+}
+
+.healthcare-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   HEALTHCARE CARD
+========================================================= */
+
+.healthcare-card {
+  position: relative;
+
+  min-height: 155px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 21px;
+
+  overflow: hidden;
+
+  border: 1px solid #dfe8e6;
+
+  border-radius: 20px;
+
+  background: #fff;
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.healthcare-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbdedb;
+
+  box-shadow:
+    0 18px 36px rgba(30, 68, 65, .08);
+}
+
+
+/* =========================================================
+   HEALTHCARE ICON
+========================================================= */
+
+.healthcare-icon {
+  position: relative;
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+}
+
+.healthcare-icon span {
+  position: absolute;
+
+  width: 53px;
+  height: 53px;
+
+  border-radius: 50% 42% 55% 45%;
+
+  transform: rotate(22deg);
+}
+
+.healthcare-icon svg {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 31px;
+}
+
+
+/* teal */
+
+.service-teal .healthcare-icon {
+  background: #e7f7f4;
+  color: #0b7a75;
+}
+
+.service-teal .healthcare-icon span {
+  background: #c8ebe5;
+}
+
+
+/* blue */
+
+.service-blue .healthcare-icon {
+  background: #eaf2ff;
+  color: #4d82b9;
+}
+
+.service-blue .healthcare-icon span {
+  background: #d0e2fa;
+}
+
+
+/* orange */
+
+.service-orange .healthcare-icon {
+  background: #fff1e2;
+  color: #c47b43;
+}
+
+.service-orange .healthcare-icon span {
+  background: #f9ddc1;
+}
+
+
+/* =========================================================
+   HEALTHCARE CONTENT
+========================================================= */
+
+.healthcare-content {
+  padding-right: 15px;
+}
+
+.healthcare-content > span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #a0aca9;
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: .16em;
+}
+
+.healthcare-content h3 {
+  margin: 0;
+
+  color: #344542;
+
+  font-size: 14px;
+
+  font-weight: 650;
+}
+
+.healthcare-content p {
+  margin: 7px 0 0;
+
+  color: #8a9794;
+
+  font-size: 9px;
+
+  line-height: 1.55;
+}
+
+.healthcare-arrow {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  color: #99a7a4;
+
+  font-size: 16px;
+
+  transition:
+    transform .2s ease,
+    color .2s ease;
+}
+
+.healthcare-card:hover .healthcare-arrow {
+  color: #0b7a75;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   PROCEDURES
+========================================================= */
+
+.procedures-section {
+  margin-bottom: 70px;
+}
+
+.view-all-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 9px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #0b7a75;
+
+  font: inherit;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.view-all-button svg {
+  font-size: 14px;
+
+  transition:
+    transform .2s ease;
+}
+
+.view-all-button:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PROCEDURE GRID
+========================================================= */
+
+.procedure-grid {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 11px;
+}
+
+
+/* =========================================================
+   PROCEDURE CARD
+========================================================= */
+
+.procedure-card {
+  position: relative;
+
+  min-height: 158px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 13px 9px;
+
+  border: 1px solid #dfe7ea;
+
+  border-radius: 17px;
+
+  background: #fff;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.procedure-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbdcd9;
+
+  box-shadow:
+    0 16px 30px rgba(30, 68, 65, .075);
+}
+
+
+/* =========================================================
+   PROCEDURE ICON
+========================================================= */
+
+.procedure-icon {
+  position: relative;
+
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  transition:
+    transform .28s ease;
+}
+
+.procedure-card:hover .procedure-icon {
+  transform:
+    scale(1.06)
+    rotate(-2deg);
+}
+
+.procedure-icon svg {
+  position: relative;
+
+  z-index: 3;
+
+  font-size: 34px;
+}
+
+.procedure-icon-shape {
+  position: absolute;
+
+  width: 57px;
+  height: 57px;
+
+  border-radius: 54% 46% 60% 40%;
+
+  transform: rotate(20deg);
+
+  opacity: .82;
+}
+
+
+/* =========================================================
+   PROCEDURE COLORS
+========================================================= */
+
+.procedure-blue {
+  background: #edf5ff;
+  color: #4a80b7;
+}
+
+.procedure-blue .procedure-icon-shape {
+  background: #d5e8fc;
+}
+
+.procedure-pink {
+  background: #fff0f4;
+  color: #d27691;
+}
+
+.procedure-pink .procedure-icon-shape {
+  background: #f9dce5;
+}
+
+.procedure-violet {
+  background: #f1eeff;
+  color: #7768b5;
+}
+
+.procedure-violet .procedure-icon-shape {
+  background: #dfd9fa;
+}
+
+.procedure-orange {
+  background: #fff2e6;
+  color: #ca8045;
+}
+
+.procedure-orange .procedure-icon-shape {
+  background: #f8dfc8;
+}
+
+.procedure-rose {
+  background: #fff0f2;
+  color: #c8687d;
+}
+
+.procedure-rose .procedure-icon-shape {
+  background: #f9d9df;
+}
+
+.procedure-red {
+  background: #ffefef;
+  color: #d26161;
+}
+
+.procedure-red .procedure-icon-shape {
+  background: #f8dada;
+}
+
+.procedure-green {
+  background: #eaf7ed;
+  color: #65a875;
+}
+
+.procedure-green .procedure-icon-shape {
+  background: #d4edd9;
+}
+
+.procedure-purple {
+  background: #f5effa;
+  color: #916bb0;
+}
+
+.procedure-purple .procedure-icon-shape {
+  background: #e6d9f1;
+}
+
+.procedure-amber {
+  background: #fff6e4;
+  color: #bd8d3d;
+}
+
+.procedure-amber .procedure-icon-shape {
+  background: #f6e4bc;
+}
+
+.procedure-sky {
+  background: #eaf7ff;
+  color: #5592b8;
+}
+
+.procedure-sky .procedure-icon-shape {
+  background: #d5edf9;
+}
+
+.procedure-coral {
+  background: #fff0ec;
+  color: #d17c68;
+}
+
+.procedure-coral .procedure-icon-shape {
+  background: #f7ddd5;
+}
+
+.procedure-indigo {
+  background: #eef0ff;
+  color: #6877b6;
+}
+
+.procedure-indigo .procedure-icon-shape {
+  background: #dce0fa;
+}
+
+.procedure-mint {
+  background: #e9f8f2;
+  color: #52977f;
+}
+
+.procedure-mint .procedure-icon-shape {
+  background: #d4eee3;
+}
+
+
+/* =========================================================
+   PROCEDURE BOTTOM
+========================================================= */
+
+.procedure-bottom {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 5px;
+}
+
+.procedure-bottom > span:first-child {
+  color: #354441;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  text-align: left;
+}
+
+.procedure-arrow {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #e0e8e6;
+
+  border-radius: 50%;
+
+  color: #8da09c;
+
+  transition:
+    transform .2s ease,
+    color .2s ease,
+    background .2s ease;
+}
+
+.procedure-arrow svg {
+  font-size: 12px;
+}
+
+.procedure-card:hover .procedure-arrow {
+  transform: translateX(2px);
+
+  color: #0b7a75;
+
+  background: #eaf7f5;
+}
+
+
+/* =========================================================
+   MORE CARD
+========================================================= */
+
+.more-procedure-card {
+  border-style: dashed;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f4faf8,
+      #ffffff
+    );
+}
+
+.more-procedure-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 5px;
+
+  border-radius: 22px;
+
+  background: #e4f5f1;
+
+  color: #0b7a75;
+}
+
+.more-procedure-icon svg {
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.wellness-bottom-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 27px 30px;
+
+  border-radius: 21px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #075e5a,
+      #0b7a75
+    );
+
+  box-shadow:
+    0 20px 40px rgba(7, 94, 90, .13);
+}
+
+.cta-line-one,
+.cta-line-two {
+  position: absolute;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 50%;
+}
+
+.cta-line-one {
+  width: 600px;
+  height: 260px;
+
+  right: -330px;
+  top: -190px;
+}
+
+.cta-line-two {
+  width: 450px;
+  height: 210px;
+
+  right: -230px;
+  top: -150px;
+}
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  flex: 1;
+}
+
+.cta-content > span {
+  color: rgba(255,255,255,.58);
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: .18em;
+}
+
+.cta-content h3 {
+  margin: 5px 0 4px;
+
+  color: #fff;
+
+  font-family: 'Plus Jakarta Sans', sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 650;
+
+  letter-spacing: -.02em;
+}
+
+.cta-content p {
+  margin: 0;
+
+  color: rgba(255,255,255,.65);
+
+  font-size: 9px;
+}
+
+.cta-button {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 16px;
+
+  border-radius: 9px;
+
+  background: #fff;
+
+  color: #075e5a;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(0,0,0,.13);
+}
+
+.cta-button svg {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .procedure-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .wellness-page {
+    padding-top: 55px;
+  }
+
+  .wellness-container {
+    width: min(100% - 36px, 700px);
+  }
+
+  .wellness-header {
+    display: block;
+  }
+
+  .wellness-search {
+    width: 100%;
+
+    margin-top: 25px;
+  }
+
+  .health-check-grid,
+  .healthcare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .health-check-section {
+    padding: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .wellness-page {
+    padding: 45px 0 75px;
+  }
+
+  .wellness-container {
+    width: calc(100% - 30px);
+  }
+
+  .wellness-header {
+    margin-bottom: 45px;
+  }
+
+  .wellness-header h1 {
+    font-size: 33px;
+  }
+
+  .wellness-header p {
+    font-size: 10px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+  .health-check-section {
+    margin-bottom: 55px;
+
+    padding: 22px 15px;
+
+    border-radius: 21px;
+  }
+
+  .health-check-card {
+    min-height: 250px;
+
+    padding: 20px;
+  }
+
+  .healthcare-card {
+    min-height: 125px;
+
+    padding: 17px;
+  }
+
+  .procedure-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .procedure-card {
+    min-height: 150px;
+  }
+
+  .procedure-icon {
+    width: 67px;
+    height: 67px;
+  }
+
+  .procedure-icon svg {
+    font-size: 31px;
+  }
+
+  .wellness-bottom-cta {
+    display: block;
+
+    padding: 22px;
+  }
+
+  .cta-button {
+    margin-top: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .wellness-container {
+    width: calc(100% - 24px);
+  }
+
+  .wellness-header h1 {
+    font-size: 30px;
+  }
+
+  .health-check-section {
+    padding: 18px 12px;
+  }
+
+  .procedure-card {
+    min-height: 142px;
+
+    padding: 10px 7px;
+  }
+
+  .procedure-icon {
+    width: 61px;
+    height: 61px;
+  }
+
+  .procedure-icon svg {
+    font-size: 28px;
+  }
+
+  .procedure-bottom > span:first-child {
+    font-size: 9px;
+  }
+
+}
