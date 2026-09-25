@@ -1,13 +1,24 @@
+import { Suspense } from 'react';
 import ContactSection from '@/components/ContactSection/ContactSection';
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Contact Us',
   description:
-    'Get in touch with Vidhi Lifebloom Healthcare & Professional Services.',
+    'Contact Vidhi Lifebloom Healthcare Private Limited for healthcare, wellness, investigation and manpower services.',
 };
 
 export default function ContactPage() {
   return (
-    <ContactSection />
+    <Suspense
+      fallback={
+        <section className="contact-loading">
+          <div className="container">
+            <p>Loading contact form...</p>
+          </div>
+        </section>
+      }
+    >
+      <ContactSection />
+    </Suspense>
   );
 }
