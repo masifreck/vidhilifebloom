@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export async function POST(request) {
   try {
     const formData = await request.json();
@@ -16,6 +25,7 @@ export async function POST(request) {
     // -----------------------------
     // Validation
     // -----------------------------
+
     if (!name || !email || !service || !message) {
       return NextResponse.json(
         {
@@ -27,14 +37,24 @@ export async function POST(request) {
     }
 
     // -----------------------------
-    // Check environment variables
+    // Environment variables
     // -----------------------------
+
+    const {
+      ZOHO_EMAIL,
+      ZOHO_PASSWORD,
+      ZOHO_HOST,
+      ZOHO_PORT,
+      CONTACT_EMAIL,
+    } = process.env;
+
     if (
-      !process.env.ZOHO_EMAIL ||
-      !process.env.ZOHO_PASSWORD ||
-      !process.env.ZOHO_HOST
+      !ZOHO_EMAIL ||
+      !ZOHO_PASSWORD ||
+      !ZOHO_HOST ||
+      !CONTACT_EMAIL
     ) {
-      console.error('Missing Zoho environment variables');
+      console.error('Missing required Zoho environment variables.');
 
       return NextResponse.json(
         {
@@ -46,22 +66,36 @@ export async function POST(request) {
     }
 
     // -----------------------------
-    // Zoho SMTP
+    // Sanitize values for HTML
     // -----------------------------
+
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone || 'Not provided');
+    const safeEmail = escapeHtml(email);
+    const safeService = escapeHtml(service);
+    const safeMessage = escapeHtml(message);
+
+    // -----------------------------
+    // Zoho SMTP transporter
+    // -----------------------------
+
+    const port = Number(ZOHO_PORT || 465);
+
     const transporter = nodemailer.createTransport({
-      host: process.env.ZOHO_HOST,
-      port: Number(process.env.ZOHO_PORT || 465),
-      secure: Number(process.env.ZOHO_PORT || 465) === 465,
+      host: ZOHO_HOST,
+      port,
+      secure: port === 465,
 
       auth: {
-        user: process.env.ZOHO_EMAIL,
-        pass: process.env.ZOHO_PASSWORD,
+        user: ZOHO_EMAIL,
+        pass: ZOHO_PASSWORD,
       },
     });
 
     // -----------------------------
     // Verify SMTP connection
     // -----------------------------
+
     await transporter.verify();
 
     console.log('Zoho SMTP connection successful');
@@ -69,16 +103,17 @@ export async function POST(request) {
     // -----------------------------
     // Send email
     // -----------------------------
+
     const mailInfo = await transporter.sendMail({
       from: {
         name: 'Vidhi Lifebloom Website',
-        address: process.env.ZOHO_EMAIL,
+        address: ZOHO_EMAIL,
       },
 
-      to: process.env.CONTACT_EMAIL || 'info@vlhpl.com',
+      to: CONTACT_EMAIL,
 
       replyTo: {
-        name,
+        name: name,
         address: email,
       },
 
@@ -97,81 +132,173 @@ ${message}
       `.trim(),
 
       html: `
-        <div style="
-          font-family: Arial, sans-serif;
-          max-width: 650px;
-          margin: 0 auto;
-          background: #ffffff;
-          border: 1px solid #e5e7eb;
-          border-radius: 12px;
-          overflow: hidden;
-        ">
-
-          <div style="
-            background: #eef7f4;
-            padding: 24px;
+        <!DOCTYPE html>
+        <html>
+          <body style="
+            margin: 0;
+            padding: 30px 15px;
+            background: #f4f7f6;
+            font-family: Arial, Helvetica, sans-serif;
           ">
 
-            <h2 style="
-              margin: 0;
-              color: #17313a;
-            ">
-              New Website Enquiry
-            </h2>
-
-            <p style="
-              margin: 6px 0 0;
-              color: #6b7280;
-            ">
-              Vidhi Lifebloom Healthcare Private Limited
-            </p>
-
-          </div>
-
-          <div style="padding: 24px;">
-
-            <p>
-              <strong>Name:</strong>
-              ${name}
-            </p>
-
-            <p>
-              <strong>Phone:</strong>
-              ${phone || 'Not provided'}
-            </p>
-
-            <p>
-              <strong>Email:</strong>
-              ${email}
-            </p>
-
-            <p>
-              <strong>Service:</strong>
-              ${service}
-            </p>
-
             <div style="
-              margin-top: 20px;
-              padding: 18px;
-              background: #f7faf9;
-              border-radius: 8px;
+              max-width: 650px;
+              margin: 0 auto;
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 14px;
+              overflow: hidden;
             ">
 
-              <strong>Message</strong>
+              <!-- Header -->
 
-              <p style="
-                white-space: pre-wrap;
-                line-height: 1.6;
-                color: #374151;
+              <div style="
+                background: #eef7f4;
+                padding: 26px 28px;
               ">
-                ${message}
-              </p>
+
+                <h2 style="
+                  margin: 0;
+                  color: #17313a;
+                  font-size: 22px;
+                ">
+                  New Website Enquiry
+                </h2>
+
+                <p style="
+                  margin: 7px 0 0;
+                  color: #6b7280;
+                  font-size: 14px;
+                ">
+                  Vidhi Lifebloom Healthcare Private Limited
+                </p>
+
+              </div>
+
+
+              <!-- Content -->
+
+              <div style="
+                padding: 28px;
+              ">
+
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    border-collapse: collapse;
+                    font-size: 15px;
+                  "
+                >
+
+                  <tr>
+                    <td style="
+                      padding: 10px 0;
+                      width: 120px;
+                      color: #6b7280;
+                    ">
+                      <strong>Name</strong>
+                    </td>
+
+                    <td style="
+                      padding: 10px 0;
+                      color: #17313a;
+                    ">
+                      ${safeName}
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td style="
+                      padding: 10px 0;
+                      color: #6b7280;
+                    ">
+                      <strong>Phone</strong>
+                    </td>
+
+                    <td style="
+                      padding: 10px 0;
+                      color: #17313a;
+                    ">
+                      ${safePhone}
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td style="
+                      padding: 10px 0;
+                      color: #6b7280;
+                    ">
+                      <strong>Email</strong>
+                    </td>
+
+                    <td style="
+                      padding: 10px 0;
+                      color: #17313a;
+                    ">
+                      ${safeEmail}
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td style="
+                      padding: 10px 0;
+                      color: #6b7280;
+                    ">
+                      <strong>Service</strong>
+                    </td>
+
+                    <td style="
+                      padding: 10px 0;
+                      color: #17313a;
+                    ">
+                      ${safeService}
+                    </td>
+                  </tr>
+
+                </table>
+
+
+                <!-- Message -->
+
+                <div style="
+                  margin-top: 22px;
+                  padding: 20px;
+                  background: #f7faf9;
+                  border-radius: 10px;
+                  border: 1px solid #edf2f0;
+                ">
+
+                  <strong style="
+                    display: block;
+                    margin-bottom: 10px;
+                    color: #17313a;
+                  ">
+                    Message
+                  </strong>
+
+                  <p style="
+                    margin: 0;
+                    white-space: pre-wrap;
+                    line-height: 1.7;
+                    color: #374151;
+                    font-size: 14px;
+                  ">
+                    ${safeMessage}
+                  </p>
+
+                </div>
+
+              </div>
 
             </div>
 
-          </div>
-
-        </div>
+          </body>
+        </html>
       `,
     });
 
@@ -200,11 +327,7 @@ ${message}
     return NextResponse.json(
       {
         success: false,
-
-        // Temporary detailed error for debugging
-        message:
-          error?.message ||
-          'Unable to send your enquiry.',
+        message: 'Unable to send your enquiry. Please try again later.',
       },
       { status: 500 }
     );
