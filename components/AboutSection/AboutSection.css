@@ -1,73 +1,154 @@
-/* =========================================================
-   25+ YEARS EXPERIENCE CARD
-   ========================================================= */
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  position: relative;
+  padding: 110px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: "ABOUT";
+  position: absolute;
+  top: 50px;
+  right: -20px;
+  font-size: clamp(90px, 13vw, 190px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: rgba(23, 49, 58, 0.025);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.about-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0 30px 30px 0;
+}
+
+.about-main-image {
+  position: relative;
+  width: 100%;
+  height: 590px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #edf4f2;
+}
+
+.about-main-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 44, 51, 0.02) 0%,
+      rgba(18, 44, 51, 0.08) 100%
+    );
+  pointer-events: none;
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================================
+   25+ EXPERIENCE CARD
+========================================= */
 
 .about-experience-card {
   position: absolute;
-  left: -22px;
-  bottom: 48px;
-
-  width: 185px;
-  min-height: 165px;
+  left: -20px;
+  bottom: 0;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 15px;
 
-  padding: 22px;
+  min-width: 230px;
+  padding: 18px 22px;
 
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(20, 55, 63, 0.08);
+  border-radius: 18px;
 
-  border-radius: 20px;
+  box-shadow:
+    0 18px 45px rgba(20, 50, 58, 0.12);
 
-  background: var(--primary);
-  color: #ffffff;
+  backdrop-filter: blur(12px);
 
-  box-shadow: 0 18px 45px rgba(11, 122, 117, 0.22);
-
-  z-index: 3;
+  z-index: 5;
 }
 
 .about-experience-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 8px;
+  border-radius: 12px;
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 9px;
+  background: #edf7f4;
+  color: #26796d;
 
-  color: var(--accent);
+  flex-shrink: 0;
+}
 
-  font-size: 16px;
+.about-experience-icon svg {
+  width: 19px;
+  height: 19px;
 }
 
 .about-experience-number {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 48px;
-  line-height: 0.95;
+  font-size: 36px;
+  line-height: 1;
   font-weight: 800;
   letter-spacing: -0.06em;
+  color: #17313a;
+  white-space: nowrap;
 }
 
 .about-experience-number span {
-  color: var(--accent);
+  color: #2b8b7c;
 }
 
 .about-experience-text {
   display: flex;
   flex-direction: column;
 
-  margin-top: 9px;
-
-  color: rgba(255, 255, 255, 0.65);
-
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.4;
+  color: #7b898e;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -75,175 +156,457 @@
 .about-experience-text strong {
   margin-top: 2px;
 
-  color: #ffffff;
-
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
+  color: #30444b;
 }
 
 
-/* =========================================================
-   ABOUT EXPERIENCE HIGHLIGHT
-   ========================================================= */
+/* =========================================
+   TRUST CARD
+========================================= */
+
+.about-check-card {
+  position: absolute;
+  right: 0;
+  top: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 17px;
+
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(20, 55, 63, 0.07);
+  border-radius: 14px;
+
+  box-shadow: 0 12px 30px rgba(20, 50, 58, 0.09);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 4;
+}
+
+.about-check-card > svg {
+  width: 18px;
+  height: 18px;
+  color: #2b8b7c;
+  flex-shrink: 0;
+}
+
+.about-check-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-check-card strong {
+  font-size: 12px;
+  color: #263c43;
+}
+
+.about-check-card span {
+  font-size: 10px;
+  color: #879398;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 18px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #318779;
+}
+
+.section-label::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: #318779;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.about-content h2 {
+  max-width: 650px;
+  margin: 0 0 24px;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+
+  color: #18323a;
+}
+
+.about-content h2 span {
+  color: #318779;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.about-intro,
+.about-secondary {
+  max-width: 680px;
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.8;
+  color: #68777c;
+}
+
+.about-secondary {
+  margin-top: 14px;
+}
+
+
+/* =========================================
+   EXPERIENCE HIGHLIGHT
+========================================= */
 
 .about-experience-highlight {
   display: flex;
-  align-items: flex-start;
-  gap: 18px;
+  align-items: center;
+  gap: 22px;
 
-  margin: 28px 0 22px;
-  padding: 20px 0;
+  margin: 30px 0;
+  padding: 20px 22px;
 
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: #f5faf8;
+  border: 1px solid #e4f0ed;
+  border-radius: 18px;
 }
 
 .about-experience-highlight-number {
-  flex: 0 0 auto;
+  flex-shrink: 0;
 
-  font-family: 'Plus Jakarta Sans', sans-serif;
-
-  color: var(--primary);
-
-  font-size: 38px;
+  font-size: 42px;
   line-height: 1;
   font-weight: 800;
-
   letter-spacing: -0.06em;
+
+  color: #17313a;
 }
 
 .about-experience-highlight-number span {
-  color: var(--accent);
+  color: #318779;
 }
 
 .about-experience-highlight-content {
-  padding-top: 1px;
+  min-width: 0;
 }
 
 .about-experience-highlight-content strong {
   display: block;
 
-  color: var(--text-primary);
-
   font-size: 14px;
   line-height: 1.4;
+  color: #243d44;
 }
 
 .about-experience-highlight-content p {
-  max-width: 560px;
-
   margin: 5px 0 0;
 
-  color: var(--text-secondary);
-
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.6;
+  color: #77858a;
 }
 
 
-/* =========================================================
-   FINAL PARAGRAPH
-   ========================================================= */
-
-.about-final-text {
-  margin-top: 0 !important;
-}
-
-
-/* =========================================================
+/* =========================================
    VALUES
-   ========================================================= */
+========================================= */
 
 .about-values {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
 
-  margin-top: 24px;
-  margin-bottom: 28px;
-}
+  margin: 25px 0 30px;
 
-.about-values span {
-  color: var(--primary);
-
-  font-size: 9px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.13em;
+  color: #59716f;
 }
 
 .about-values i {
-  color: var(--accent);
-
-  font-size: 12px;
   font-style: normal;
+  color: #9eb5b0;
 }
 
 
-/* =========================================================
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 16px;
+
+  border: 1px solid #edf1f0;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.about-highlight:hover {
+  transform: translateY(-3px);
+
+  border-color: #dcebe7;
+
+  box-shadow:
+    0 14px 30px rgba(22, 55, 62, 0.07);
+}
+
+.about-highlight-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #f0f7f5;
+  color: #318779;
+}
+
+.about-highlight-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.about-highlight h3 {
+  margin: 0 0 4px;
+
+  font-size: 13px;
+  line-height: 1.3;
+  color: #263d44;
+}
+
+.about-highlight p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.55;
+  color: #849095;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .about-section {
+    padding: 85px 0;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-visual {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .about-main-image {
+    height: 520px;
+  }
+
+  .about-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================
    MOBILE
-   ========================================================= */
+========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
+
+  .about-section {
+    padding: 65px 0;
+  }
+
+  .about-section::before {
+    top: 25px;
+    right: -20px;
+    font-size: 85px;
+  }
+
+  .about-layout {
+    gap: 42px;
+  }
+
+
+  /* IMAGE */
+
+  .about-visual {
+    padding: 0;
+  }
+
+  .about-main-image {
+    height: 390px;
+    border-radius: 22px;
+  }
+
+
+  /* ---------------------------------------
+     25+ CARD
+  --------------------------------------- */
 
   .about-experience-card {
-    left: 15px;
-    bottom: 30px;
+    left: 14px;
+    bottom: 14px;
 
-    width: 170px;
-    min-height: 150px;
-  }
+    min-width: auto;
 
-  .about-experience-number {
-    font-size: 42px;
-  }
+    padding: 11px 13px;
+    gap: 10px;
 
-  .about-experience-highlight {
-    margin-top: 24px;
-  }
-}
+    border-radius: 14px;
 
-
-@media (max-width: 600px) {
-
-  .about-experience-card {
-    left: 12px;
-    bottom: 20px;
-
-    width: 155px;
-    min-height: 140px;
-
-    padding: 17px;
-
-    border-radius: 16px;
+    box-shadow:
+      0 10px 25px rgba(20, 50, 58, 0.12);
   }
 
   .about-experience-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
 
-    margin-bottom: 6px;
-
-    font-size: 14px;
+  .about-experience-icon svg {
+    width: 15px;
+    height: 15px;
   }
 
   .about-experience-number {
-    font-size: 38px;
+    font-size: 27px;
   }
 
   .about-experience-text {
     font-size: 8px;
+    letter-spacing: 0.07em;
   }
 
   .about-experience-text strong {
+    font-size: 8px;
+  }
+
+
+  /* TRUST */
+
+  .about-check-card {
+    top: 14px;
+    right: 14px;
+
+    padding: 9px 11px;
+    border-radius: 11px;
+  }
+
+  .about-check-card > svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .about-check-card strong {
+    font-size: 10px;
+  }
+
+  .about-check-card span {
+    font-size: 8px;
+  }
+
+
+  /* CONTENT */
+
+  .section-label {
+    margin-bottom: 13px;
     font-size: 9px;
   }
 
+  .section-label::before {
+    width: 18px;
+  }
+
+  .about-content h2 {
+    margin-bottom: 18px;
+
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .about-intro,
+  .about-secondary {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+
+  /* ---------------------------------------
+     EXPERIENCE HIGHLIGHT
+  --------------------------------------- */
+
   .about-experience-highlight {
+    align-items: flex-start;
     gap: 14px;
-    padding: 17px 0;
+
+    margin: 24px 0;
+    padding: 16px;
+
+    border-radius: 15px;
   }
 
   .about-experience-highlight-number {
@@ -251,20 +614,84 @@
   }
 
   .about-experience-highlight-content strong {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .about-experience-highlight-content p {
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 1.55;
   }
+
+
+  /* VALUES */
 
   .about-values {
-    gap: 6px;
-    margin-top: 20px;
-    margin-bottom: 24px;
-  }
+    gap: 7px;
+    margin: 22px 0 24px;
 
-  .about-values span {
     font-size: 8px;
   }
+
+
+  /* HIGHLIGHTS */
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-highlight {
+    padding: 13px;
+    border-radius: 13px;
+  }
+
+  .about-highlight-icon {
+    width: 33px;
+    height: 33px;
+    border-radius: 9px;
+  }
+
+  .about-highlight h3 {
+    font-size: 12px;
+  }
+
+  .about-highlight p {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .about-main-image {
+    height: 340px;
+  }
+
+  .about-experience-card {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .about-experience-number {
+    font-size: 24px;
+  }
+
+  .about-experience-text {
+    max-width: 85px;
+  }
+
+  .about-check-card {
+    right: 10px;
+    top: 10px;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
 }

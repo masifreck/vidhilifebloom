@@ -1,7 +1,7 @@
 import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import WhatsAppButton from '@/components/WhatsApp/WhatsAppButton';
+
 
 export const metadata = {
   title: {

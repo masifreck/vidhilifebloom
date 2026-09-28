@@ -1,9 +1,12 @@
 import HealthcareStaffServices from '@/components/HealthcareStaffServices/HealthcareStaffServices';
 
 export const metadata = {
-  title: 'Healthcare Staff Solutions',
+  title: 'Healthcare Staffing Solutions | Vidhi Lifebloom',
   description:
-    'Healthcare workforce solutions including nursing staff, patient care attendants, caregivers and healthcare support staff.',
+    'Healthcare staffing solutions for nurses, doctors, lab technicians, caregivers, patient care attendants and hospital support staff.',
+  alternates: {
+    canonical: 'https://vlhpl.com/manpower-supply',
+  },
 };
 
 export default function ManpowerSupplyPage() {

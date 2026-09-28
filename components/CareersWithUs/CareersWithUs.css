@@ -933,6 +933,191 @@
   }
 }
 
+/* =========================================
+   SELECTED POSITION
+========================================= */
+
+.selected-role-box {
+  margin-top: 28px;
+  padding: 17px 19px;
+
+  border: 1px solid rgba(49, 135, 121, 0.18);
+  border-radius: 16px;
+
+  background: #f3f9f7;
+}
+
+.selected-role-box span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: #6d8581;
+}
+
+.selected-role-box strong {
+  display: block;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  color: #1c393f;
+}
+
+
+/* =========================================
+   FORM HINT
+========================================= */
+
+.career-field-hint {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: #89999d;
+}
+
+
+/* =========================================
+   POSITION INPUT
+========================================= */
+
+#career-position {
+  background: #f5f9f8;
+  color: #234047;
+  font-weight: 600;
+
+  cursor: default;
+}
+
+
+/* =========================================
+   EMPLOYMENT TYPE
+========================================= */
+
+.employment-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.employment-type-option {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 52px;
+  padding: 12px 15px;
+
+  border: 1px solid #e2e9e7;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.employment-type-option:hover {
+  border-color: #bcdad3;
+}
+
+.employment-type-option.active {
+  border-color: #318779;
+  background: #f3f9f7;
+
+  box-shadow:
+    0 8px 20px rgba(49, 135, 121, 0.08);
+}
+
+.employment-type-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.employment-radio {
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1.5px solid #b7c6c3;
+  border-radius: 50%;
+}
+
+.employment-radio span {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  transition: background 0.2s ease;
+}
+
+.employment-type-option.active .employment-radio {
+  border-color: #318779;
+}
+
+.employment-type-option.active .employment-radio span {
+  background: #318779;
+}
+
+.employment-type-text {
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #31484e;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  .employment-type-options {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .employment-type-option {
+    min-height: 49px;
+    padding: 11px 13px;
+  }
+
+  .selected-role-box {
+    margin-top: 20px;
+    padding: 14px 15px;
+  }
+
+  .selected-role-box strong {
+    font-size: 13px;
+  }
+
+}
+
 /* =========================================================
    REDUCED MOTION
    ========================================================= */

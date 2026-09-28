@@ -1010,3 +1010,42 @@
     animation: none;
   }
 }
+
+/* =========================================
+   CONTACT SECTION LAYER
+========================================= */
+
+.contact-section {
+  position: relative;
+  z-index: 20;
+}
+
+
+/* =========================================
+   SERVICE FIELD
+========================================= */
+
+.contact-service-field {
+  position: relative;
+  z-index: 30;
+}
+
+
+/* =========================================
+   SERVICE DROPDOWN
+========================================= */
+
+.contact-service-field select {
+  position: relative;
+  z-index: 40;
+}
+
+
+/* =========================================
+   CONTACT FORM CONTENT
+========================================= */
+
+.contact-form {
+  position: relative;
+  z-index: 25;
+}

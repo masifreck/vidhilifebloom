@@ -79,21 +79,50 @@ const careerRoles = [
     icon: MdOutlineLocalHospital,
     theme: 'violet',
   },
+  {
+    id: 'housekeeping',
+    title: 'Housekeeping Staff',
+    icon: MdOutlineLocalHospital,
+    theme: 'green',
+  },
+  {
+    id: 'home-care',
+    title: 'Home Care Staff',
+    icon: MdOutlineElderly,
+    theme: 'orange',
+  },
 ];
+
+const initialForm = {
+  name: '',
+  phone: '',
+  email: '',
+  experience: '',
+  employmentType: '',
+  message: '',
+};
 
 const CareersWithUs = () => {
   const [selectedRole, setSelectedRole] = useState('');
-
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    experience: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(initialForm);
 
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
+
+    setFormData((previous) => ({
+      ...previous,
+      position: role,
+    }));
+
+    // Scroll to application form
+    setTimeout(() => {
+      document
+        .getElementById('career-application-form')
+        ?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+    }, 100);
   };
 
   const handleChange = (event) => {
@@ -113,6 +142,11 @@ const CareersWithUs = () => {
       return;
     }
 
+    if (!formData.employmentType) {
+      alert('Please select Full Time or Part Time.');
+      return;
+    }
+
     if (!formData.name || !formData.phone || !formData.email) {
       alert('Please fill in your name, phone and email.');
       return;
@@ -124,9 +158,7 @@ const CareersWithUs = () => {
 
     const body = `
 CAREER APPLICATION
-==================
-
-
+==============================
 
 Applicant Name:
 ${formData.name}
@@ -137,13 +169,19 @@ ${formData.phone}
 Email:
 ${formData.email}
 
+Position Applied For:
+${selectedRole}
+
+Employment Type:
+${formData.employmentType}
+
 Experience:
 ${formData.experience || 'Not specified'}
 
 Message:
 ${formData.message || 'Not provided'}
 
-==================
+==============================
 Vidhi Lifebloom Healthcare Private Limited
     `.trim();
 
@@ -158,13 +196,16 @@ Vidhi Lifebloom Healthcare Private Limited
   return (
     <main className="careers-page">
 
+      {/* Background decoration */}
       <div className="careers-bg-line careers-bg-line-one" />
       <div className="careers-bg-line careers-bg-line-two" />
       <div className="careers-bg-circle careers-bg-circle-one" />
 
       <div className="careers-container">
 
-        {/* HERO */}
+        {/* =========================================
+            HERO
+        ========================================= */}
 
         <section className="careers-hero">
 
@@ -180,22 +221,33 @@ Vidhi Lifebloom Healthcare Private Limited
             </h1>
 
             <p>
-              Join a growing team of healthcare professionals and
-              support staff helping people receive better care,
-              every day.
+              Join a growing team of healthcare professionals
+              and support staff helping people receive better
+              care, every day.
             </p>
 
           </div>
 
           <div className="careers-hero-mark">
+
             <MdOutlineWorkOutline />
-            <span>JOIN<br />OUR<br />TEAM</span>
+
+            <span>
+              JOIN
+              <br />
+              OUR
+              <br />
+              TEAM
+            </span>
+
           </div>
 
         </section>
 
 
-        {/* ROLES */}
+        {/* =========================================
+            ROLES
+        ========================================= */}
 
         <section className="careers-roles-section">
 
@@ -238,7 +290,9 @@ Vidhi Lifebloom Healthcare Private Limited
                   className={`career-role-card theme-${role.theme} ${
                     isSelected ? 'selected' : ''
                   }`}
-                  onClick={() => handleRoleSelect(role.title)}
+                  onClick={() =>
+                    handleRoleSelect(role.title)
+                  }
                 >
 
                   <div className="career-role-icon">
@@ -251,7 +305,9 @@ Vidhi Lifebloom Healthcare Private Limited
                       HEALTHCARE OPPORTUNITY
                     </span>
 
-                    <h3>{role.title}</h3>
+                    <h3>
+                      {role.title}
+                    </h3>
 
                   </div>
 
@@ -269,9 +325,16 @@ Vidhi Lifebloom Healthcare Private Limited
         </section>
 
 
-        {/* APPLICATION */}
+        {/* =========================================
+            APPLICATION FORM
+        ========================================= */}
 
-        <section className="career-application-section">
+        <section
+          id="career-application-form"
+          className="career-application-section"
+        >
+
+          {/* LEFT SIDE */}
 
           <div className="career-application-intro">
 
@@ -285,17 +348,25 @@ Vidhi Lifebloom Healthcare Private Limited
             </h2>
 
             <p>
-              Select a position and share a few details about
-              yourself. Our team can review your application
-              and get in touch if there is a suitable opportunity.
+              Select a position and share a few details
+              about yourself. Our team can review your
+              application and get in touch if there is
+              a suitable opportunity.
             </p>
+
+
+            {/* Selected Position */}
 
             {selectedRole && (
               <div className="selected-role-box">
 
-                <span>SELECTED POSITION</span>
+                <span>
+                  SELECTED POSITION
+                </span>
 
-                <strong>{selectedRole}</strong>
+                <strong>
+                  {selectedRole}
+                </strong>
 
               </div>
             )}
@@ -303,10 +374,46 @@ Vidhi Lifebloom Healthcare Private Limited
           </div>
 
 
+          {/* RIGHT SIDE FORM */}
+
           <form
             className="career-application-form"
             onSubmit={handleSubmit}
           >
+
+            {/* =====================================
+                SELECTED POSITION
+            ====================================== */}
+
+            <div className="career-form-field">
+
+              <label htmlFor="career-position">
+                Position
+              </label>
+
+              <input
+                id="career-position"
+                name="position"
+                type="text"
+                value={formData.position || ''}
+                placeholder="Select a position above"
+                readOnly
+                required
+              />
+
+              {!selectedRole && (
+                <small className="career-field-hint">
+                  Please select a position from the
+                  opportunities above.
+                </small>
+              )}
+
+            </div>
+
+
+            {/* =====================================
+                NAME + PHONE
+            ====================================== */}
 
             <div className="career-form-grid">
 
@@ -347,6 +454,14 @@ Vidhi Lifebloom Healthcare Private Limited
 
               </div>
 
+            </div>
+
+
+            {/* =====================================
+                EMAIL + EXPERIENCE
+            ====================================== */}
+
+            <div className="career-form-grid">
 
               <div className="career-form-field">
 
@@ -407,6 +522,86 @@ Vidhi Lifebloom Healthcare Private Limited
             </div>
 
 
+            {/* =====================================
+                EMPLOYMENT TYPE
+            ====================================== */}
+
+            <div className="career-form-field">
+
+              <label>
+                Employment Type
+              </label>
+
+              <div className="employment-type-options">
+
+                <label
+                  className={`employment-type-option ${
+                    formData.employmentType === 'Full Time'
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+
+                  <input
+                    type="radio"
+                    name="employmentType"
+                    value="Full Time"
+                    checked={
+                      formData.employmentType ===
+                      'Full Time'
+                    }
+                    onChange={handleChange}
+                  />
+
+                  <span className="employment-radio">
+                    <span />
+                  </span>
+
+                  <span className="employment-type-text">
+                    Full Time
+                  </span>
+
+                </label>
+
+
+                <label
+                  className={`employment-type-option ${
+                    formData.employmentType === 'Part Time'
+                      ? 'active'
+                      : ''
+                  }`}
+                >
+
+                  <input
+                    type="radio"
+                    name="employmentType"
+                    value="Part Time"
+                    checked={
+                      formData.employmentType ===
+                      'Part Time'
+                    }
+                    onChange={handleChange}
+                  />
+
+                  <span className="employment-radio">
+                    <span />
+                  </span>
+
+                  <span className="employment-type-text">
+                    Part Time
+                  </span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            {/* =====================================
+                MESSAGE
+            ====================================== */}
+
             <div className="career-form-field">
 
               <label htmlFor="career-message">
@@ -425,17 +620,26 @@ Vidhi Lifebloom Healthcare Private Limited
             </div>
 
 
+            {/* =====================================
+                SUBMIT
+            ====================================== */}
+
             <button
               type="submit"
               className="career-submit-button"
             >
+
               Submit Application
+
               <MdOutlineArrowForward />
+
             </button>
 
+
             <p className="career-form-note">
-              Your email application will open in your default
-              email application with the details filled in.
+              Your email application will open in your
+              default email application with the details
+              filled in.
             </p>
 
           </form>

@@ -1,9 +1,12 @@
 import InvestigationServices from '@/components/InvestigationServices/InvestigationServices';
 
 export const metadata = {
-  title: 'Insurance & Investigation Services',
+  title: 'Healthcare Investigation Services | Vidhi Lifebloom',
   description:
-    'Professional insurance investigation, claim investigation, verification and investigation services.',
+    'Professional insurance, health claim, death claim, background verification and investigation services.',
+  alternates: {
+    canonical: 'https://vlhpl.com/investigation-agency',
+  },
 };
 
 export default function InvestigationPage() {

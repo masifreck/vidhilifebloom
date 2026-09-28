@@ -1,11 +1,12 @@
-import { MetadataRoute } from 'next';
+export default function robots() {
+  const baseUrl = 'https://vlhpl.com';
 
-export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.vidhilifebloom.com/sitemap.xml',
+
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
