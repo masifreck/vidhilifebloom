@@ -606,7 +606,7 @@ const WellnessServices = () => {
             </h3>
 
             <p>
-              Tell us what you're looking for and our team
+              Tell us what you&apos;re looking for and our team
               can help you with the right service.
             </p>
 

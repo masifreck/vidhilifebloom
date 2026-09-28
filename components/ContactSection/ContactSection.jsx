@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ServiceSelector from '@/components/ServiceSelector/ServiceSelector';
 import {
@@ -22,15 +22,16 @@ const initialForm = {
 
 const ContactSection = () => {
   const searchParams = useSearchParams();
-const categoryFromUrl = searchParams.get('category');
-const [initialCategory, setInitialCategory] = useState(
-  categoryFromUrl || null
-); 
+  const categoryFromUrl = searchParams.get('category');
+  const serviceFromUrl = searchParams.get('service');
+
+  const [initialCategory] = useState(categoryFromUrl || null);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    service: searchParams.get('service') || '',
+    service: serviceFromUrl || '',
     message: '',
   });
 
@@ -43,11 +44,16 @@ const [initialCategory, setInitialCategory] = useState(
    *
    * Example:
    * /contact?service=Physiotherapy
+   *
+   * Adjusted during render (rather than in an effect) since this is
+   * derived from the `service` search param changing.
    * -------------------------------------------------------
    */
 
-  useEffect(() => {
-    const serviceFromUrl = searchParams.get('service');
+  const [prevServiceFromUrl, setPrevServiceFromUrl] = useState(serviceFromUrl);
+
+  if (serviceFromUrl !== prevServiceFromUrl) {
+    setPrevServiceFromUrl(serviceFromUrl);
 
     if (serviceFromUrl) {
       setFormData((previous) => ({
@@ -55,7 +61,7 @@ const [initialCategory, setInitialCategory] = useState(
         service: serviceFromUrl,
       }));
     }
-  }, [searchParams]);
+  }
 
   /*
    * -------------------------------------------------------

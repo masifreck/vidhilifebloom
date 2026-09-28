@@ -112,6 +112,7 @@ const ServiceSelector = ({
     const [openUpward, setOpenUpward] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState(initialCategory);
+  const [prevValue, setPrevValue] = useState(value);
   const selectorRef = useRef(null);
 
   /*
@@ -122,14 +123,17 @@ const ServiceSelector = ({
   );
 
   /*
-   * Open the correct category when a service is
-   * already selected.
+   * Open the correct category when a service is already selected.
+   * Adjusted during render (rather than in an effect) since this is
+   * derived from the `value` prop changing.
    */
-  useEffect(() => {
+  if (value !== prevValue) {
+    setPrevValue(value);
+
     if (value && selectedCategory) {
       setOpenCategory(selectedCategory.id);
     }
-  }, [value, selectedCategory]);
+  }
 
   /*
    * Close dropdown when clicking outside.
