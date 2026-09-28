@@ -105,12 +105,12 @@ const Footer = () => {
             </Link>
 
             <Link href="/investigation-agency">
-              <span>Investigation</span>
+              <span>Insurance</span>
               <FiArrowRight />
             </Link>
 
             <Link href="/manpower-supply">
-              <span>Workforce</span>
+              <span>Staffing</span>
               <FiArrowRight />
             </Link>
 

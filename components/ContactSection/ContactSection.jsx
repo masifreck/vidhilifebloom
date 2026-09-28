@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-
+import ServiceSelector from '@/components/ServiceSelector/ServiceSelector';
 import {
   FiArrowUpRight,
   FiCheck,
@@ -22,7 +22,10 @@ const initialForm = {
 
 const ContactSection = () => {
   const searchParams = useSearchParams();
-
+const categoryFromUrl = searchParams.get('category');
+const [initialCategory, setInitialCategory] = useState(
+  categoryFromUrl || null
+); 
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -374,298 +377,20 @@ const ContactSection = () => {
                   <div className="contact-field">
 
                     <label htmlFor="contact-service">
-                      Service
-                    </label>
+    Service
+  </label>
+
+  <ServiceSelector
+    value={formData.service}
+    onChange={(service) =>
+      setFormData((previous) => ({
+        ...previous,
+        service,
+      }))
+    }
+    initialCategory={initialCategory}
+  />
 
-                    <select
-                      id="contact-service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                    >
-
-                      <option value="" disabled>
-                        Select a service
-                      </option>
-
-
-                      {/* ================================
-                          HEALTH CHECKUPS
-                      ================================= */}
-
-                      <optgroup label="Health Checkups">
-
-                        <option value="Pre-Employment Health Checkup">
-                          Pre-Employment Health Checkup
-                        </option>
-
-                        <option value="Pre-Policy Health Checkup">
-                          Pre-Policy Health Checkup
-                        </option>
-
-                        <option value="Paid Health Checkup">
-                          Paid Health Checkup
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          HEALTHCARE SERVICES
-                      ================================= */}
-
-                      <optgroup label="Healthcare Services">
-
-                        <option value="Doctor Consultation">
-                          Doctor Consultation
-                        </option>
-
-                        <option value="Lab Reports">
-                          Lab Reports
-                        </option>
-
-                        <option value="Medicines">
-                          Medicines
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          SPECIALIZED PROCEDURES
-                      ================================= */}
-
-                      <optgroup label="Specialized Procedures">
-
-                        <option value="Cataract">
-                          Cataract
-                        </option>
-
-                        <option value="Hair Transplant">
-                          Hair Transplant
-                        </option>
-
-                        <option value="LASIK">
-                          LASIK
-                        </option>
-
-                        <option value="Knee">
-                          Knee
-                        </option>
-
-                        <option value="Hysterectomy">
-                          Hysterectomy
-                        </option>
-
-                        <option value="Tonsillectomy">
-                          Tonsillectomy
-                        </option>
-
-                        <option value="Gallstone">
-                          Gallstone
-                        </option>
-
-                        <option value="Fissure">
-                          Fissure
-                        </option>
-
-                        <option value="Piles">
-                          Piles
-                        </option>
-
-                        <option value="Circumcision">
-                          Circumcision
-                        </option>
-
-                        <option value="Kidney Stones">
-                          Kidney Stones
-                        </option>
-
-                        <option value="IVF">
-                          IVF
-                        </option>
-
-                        <option value="Gynecomastia">
-                          Gynecomastia
-                        </option>
-
-                        <option value="Vaccination">
-                          Vaccination
-                        </option>
-
-                        <option value="Health Screening">
-                          Health Screening
-                        </option>
-
-                        <option value="Blood Testing">
-                          Blood Testing
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          HOME CARE
-                      ================================= */}
-
-                      <optgroup label="Home Care">
-
-                        <option value="Caregiver & Elderly">
-                          Caregiver & Elderly
-                        </option>
-
-                        <option value="Nursing Assistance">
-                          Nursing Assistance
-                        </option>
-
-                        <option value="Physiotherapy">
-                          Physiotherapy
-                        </option>
-
-                        <option value="Doctor's Consultation">
-                          Doctor&apos;s Consultation
-                        </option>
-
-                        <option value="Medical Equipment">
-                          Medical Equipment
-                        </option>
-
-                        <option value="General Health Checkup">
-                          General Health Checkup
-                        </option>
-
-                        <option value="Onsite Medical Room">
-                          Onsite Medical Room
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          INSURANCE INVESTIGATION
-                      ================================= */}
-
-                      <optgroup label="Insurance Investigation">
-
-                        <option value="Insurance Investigation">
-                          Insurance Investigation
-                        </option>
-
-                        <option value="Health Claim Investigation">
-                          Health Claim Investigation
-                        </option>
-
-                        <option value="Death Claim Investigation">
-                          Death Claim Investigation
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          INVESTIGATION SERVICES
-                      ================================= */}
-
-                      <optgroup label="Investigation Services">
-
-                        <option value="Personal Investigation">
-                          Personal Investigation
-                        </option>
-
-                        <option value="Background Verification">
-                          Background Verification
-                        </option>
-
-                        <option value="Corporate Investigation">
-                          Corporate Investigation
-                        </option>
-
-                        <option value="Surveillance Services">
-                          Surveillance Services
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          HEALTHCARE STAFFING
-                      ================================= */}
-
-                      <optgroup label="Healthcare Staffing">
-
-                        <option value="Nursing Staff">
-                          Nursing Staff
-                        </option>
-
-                        <option value="Staff Nurse">
-                          Staff Nurse
-                        </option>
-
-                        <option value="Ward Boy / Patient Care Attendant">
-                          Ward Boy / Patient Care Attendant
-                        </option>
-
-                        <option value="Lab Technician">
-                          Lab Technician
-                        </option>
-
-                        <option value="Pharmacist">
-                          Pharmacist
-                        </option>
-
-                        <option value="Doctor">
-                          Doctor
-                        </option>
-
-                        <option value="Physiotherapist">
-                          Physiotherapist
-                        </option>
-
-                        <option value="Caregiver">
-                          Caregiver
-                        </option>
-
-                        <option value="Medical Receptionist">
-                          Medical Receptionist
-                        </option>
-
-                        <option value="Hospital Support Staff">
-                          Hospital Support Staff
-                        </option>
-
-                        <option value="Housekeeping Staff">
-                          Housekeeping Staff
-                        </option>
-
-                        <option value="Home Care Staff">
-                          Home Care Staff
-                        </option>
-
-                      </optgroup>
-
-
-                      {/* ================================
-                          OTHER SERVICES
-                      ================================= */}
-
-                      <optgroup label="Other Services">
-
-                        <option value="Activity & Wellness">
-                          Activity & Wellness
-                        </option>
-
-                        <option value="Professional Home Care">
-                          Professional Home Care
-                        </option>
-
-                        <option value="Other Services">
-                          Other Services
-                        </option>
-
-                      </optgroup>
-
-                    </select>
 
                   </div>
 
@@ -727,7 +452,7 @@ const ContactSection = () => {
 
 
                   <button
-                    type="submit"
+                    type="submit" 
                     className="contact-submit"
                     disabled={status === 'loading'}
                   >

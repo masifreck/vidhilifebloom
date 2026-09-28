@@ -2,7 +2,7 @@
   position: relative;
   min-height: calc(100vh - var(--header-height));
   padding: 58px 0 90px;
-  overflow: hidden;
+  overflow: visible;
   background:
     radial-gradient(
       circle at 8% 18%,
@@ -67,7 +67,7 @@
   border: 1px solid var(--border);
   border-radius: 30px;
 
-  overflow: hidden;
+  overflow: visible;
 
   box-shadow:
     0 25px 80px rgba(23, 33, 33, 0.09);
@@ -88,7 +88,7 @@
 
   padding: 48px;
 
-  overflow: hidden;
+  overflow: visible;
 
   background:
     radial-gradient(

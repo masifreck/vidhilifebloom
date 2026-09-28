@@ -23,7 +23,7 @@ const featuredServices = [
     id: 1,
     title: 'Nursing Staff',
     description:
-      'Qualified nursing professionals for hospitals, healthcare facilities and home-based requirements.',
+      'Qualified nursing professionals (ANM, GNM & B.Sc Nursing) for hospitals, healthcare facilities and home-based requirements.',
     icon: MdOutlineMedicalServices,
     theme: 'teal',
   },
@@ -116,7 +116,7 @@ const HealthcareStaffServices = () => {
           <div className="healthcare-staff-hero-image">
 
             <img
-              src="/images/manpower/man1.jpg"
+              src="/images/manpower/man1.jpeg"
               alt="Healthcare staff solutions"
             />
 

@@ -23,8 +23,8 @@ import {
   MdOutlineMonitorHeart,
   MdOutlineBloodtype,
   MdOutlineSearch,
-  MdOutlinePerson
-
+  MdOutlinePerson,
+  MdOutlineCorporateFare,
 } from 'react-icons/md';
 
 import './WellnessServices.css';
@@ -96,6 +96,22 @@ const healthcareServices = [
       'Access essential medicines and medical support for your healthcare needs.',
     icon: MdOutlineMedication,
     theme: 'orange',
+  },
+    {
+    id: 4,
+    title: 'General Health Checkup',
+    description:
+      'Preventive screenings and health-check camps for schools and corporate clients.',
+    icon: MdOutlineMonitorHeart,
+    theme: 'rose',
+  },
+  {
+    id: 5,
+    title: 'Onsite Medical Room',
+    description:
+      'On-site medical rooms and health talks to support corporate employee well-being.',
+    icon: MdOutlineCorporateFare,
+    theme: 'indigo',
   },
 ];
 

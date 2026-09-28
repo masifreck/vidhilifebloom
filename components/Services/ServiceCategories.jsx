@@ -28,7 +28,7 @@ const services = [
   },
   {
     id: 3,
-    title: 'Investigation Agency',
+    title: 'Insurance & Investigation',
     description: 'Professional and confidential investigation services.',
     image: '/images/investigation/investigation.jpg',
     href: '/investigation-agency',
@@ -36,7 +36,7 @@ const services = [
   },
   {
     id: 4,
-    title: 'Manpower Supply',
+    title: 'HealthCare Staffing',
     description: 'Dependable workforce solutions for organizations.',
     image: '/images/manpower/man1.jpeg',
     href: '/manpower-supply',
